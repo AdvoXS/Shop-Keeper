@@ -1,0 +1,15 @@
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.csprojAssemblyReference.cache
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\MainWindow.g.cs
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\App.g.cs
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper_MarkupCompile.cache
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper_MarkupCompile.lref
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\bin\Debug\ShopKeeper.exe.config
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\bin\Debug\ShopKeeper.exe
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\bin\Debug\ShopKeeper.pdb
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\MainWindow.baml
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.g.resources
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.Properties.Resources.resources
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.csproj.GenerateResource.cache
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.csproj.CoreCompileInputs.cache
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.exe
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.pdb

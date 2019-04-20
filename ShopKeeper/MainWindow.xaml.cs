@@ -24,8 +24,8 @@ namespace ShopKeeper
         private void init_Elements()
         {
             double ots = 0;
-            btnsKritetiy = new Button[3];
-            for (int i = 0; i < 3; i++)
+            btnsKritetiy = new Button[4];
+            for (int i = 0; i < 4; i++)
             {
                 btnsKritetiy[i] = new Button();
                 btnsKritetiy[i].Margin = new Thickness(helperButton.Margin.Left + helperButton.Width + 2, helperButton.Margin.Top+ots, 0, 0);
@@ -41,6 +41,7 @@ namespace ShopKeeper
             btnsKritetiy[0].Content = "Указать нижние границы";
             btnsKritetiy[1].Content = "Субоптимизация";
             btnsKritetiy[2].Content = "Лексикографическая оптимизация";
+            btnsKritetiy[3].Content = "Обобщенный критерий";
             btnsKritetiy[0].Click += lowBordersButtonClick;
             btnsKritetiy[1].Click += resetShow_Click;
 
@@ -49,8 +50,11 @@ namespace ShopKeeper
         public void but_Show_Click(object sender, EventArgs e)
         {
             clearViewCPUs();
-            
-            Show_Cpus((int)slds[0].Value, (int)slds[1].Value, (int)slds[2].Value, true,true);
+            bool isChBox1 = true, isChBox2;
+           isChBox1= (bool)chBoxs[0].IsChecked ? true : false;
+            isChBox2 = (bool)chBoxs[1].IsChecked ? true : false;
+            Show_Cpus(int.Parse(txtBoxsLow[0].Text), int.Parse(txtBoxsLow[1].Text), int.Parse(txtBoxsLow[2].Text),
+                int.Parse(txtBoxsLow[3].Text), int.Parse(txtBoxsLow[4].Text), int.Parse(txtBoxsLow[5].Text), isChBox1, isChBox2);
         }
         public void resetShow_Click(object sender, EventArgs e)
         {
@@ -84,88 +88,82 @@ namespace ShopKeeper
         }
         private void HelperButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!isClickHelperButton)
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    btnsKritetiy[i].Visibility = Visibility.Visible;
-                    btnsKritetiy[i].IsEnabled = true;
-                }
-
-                isClickHelperButton = true;
-                int r = panelHelp.Children.Count;
-            }
-            else
-            {
-                for (int i = 0; i < 3; i++)
-                    btnsKritetiy[i].Visibility = Visibility.Hidden;
-
-                isClickHelperButton = false;
-            }
+            helperButtonShowOption(1);
         }
         private void lowBordersButtonClick(object sender, RoutedEventArgs e)
         {
             showHelpMenuLowBorders();
-            for (int i = 0; i < 3; i++)
-                btnsKritetiy[i].Visibility = Visibility.Hidden;
-            isClickHelperButton = false;
+            helperButtonShowOption(1);
 
         }
-        Slider[] slds;
+        TextBox[] txtBoxsLow;
         private void showHelper()
         {
             helperButton.Visibility = Visibility.Visible;
             helperButton.Background = mainWindow.Background;
 
         }
+        CheckBox[] chBoxs;
         private void showHelpMenuLowBorders()
         {
             clearHelpMenu();
             Label[] lbls = new Label[5];
-             slds = new Slider[3];
-            CheckBox[] chBoxs = new CheckBox[2];
+            txtBoxsLow = new TextBox[6];
+            chBoxs = new CheckBox[2];
             Button btnShow = new Button();
             Button resetShow = new Button();
-            int tek = 30;
+            int tekY = 90;
             int ots = 55;
-            string[] forMenuLabels = { "Количество ядер", "Тактовая частота", "Стоимость","Наличие интегрированного видеоядра",
-                "Наличие системы охлаждения в комплекте" };
+            string[] forMenuLabels = { "Количество ядер", "Тактовая частота", "Стоимость","Интегрированное видеоядро",
+                "Cистема охлаждения в комплекте" };
             for (int i = 0; i < lbls.Length; i++)
             {
                 lbls[i] = new Label();
                 lbls[i].FontSize = tempLabel.FontSize;
                 lbls[i].FontStyle = tempLabel.FontStyle;
-                lbls[i].Margin = new Thickness(25, tek, 0, 0);
+                
                 panelHelp.Children.Add(lbls[i]);
-                lbls[i].Content = forMenuLabels[i];
-                tek += ots;
-            }
-            tek = 55;
-            for(int i = 0; i < slds.Length; i++)
-            {
-                slds[i] = new Slider();
-                slds[i].Margin = new Thickness(25, tek, 0, 0);
-                slds[i].Maximum = 16;
-                slds[i].Minimum = 1;
-                slds[i].TickFrequency = 1;
-                DoubleCollection tickMarks = new DoubleCollection();
-                for (int j = 0; j < 16; j++)
+                if (i > 2)
                 {
-                    tickMarks.Add(j+1);
+                    lbls[i].Margin = new Thickness(45, tekY-4, 0, 0);
+                    chBoxs[i-3] = new CheckBox();
+                    chBoxs[i-3].Margin = new Thickness(25, tekY, 0, 0);
+                    panelHelp.Children.Add(chBoxs[i-3]);
+                    tekY += ots-20;
                 }
-                slds[i].Ticks = tickMarks;
-                slds[i].IsSnapToTickEnabled = true;
-                slds[i].Width = 160;
-                slds[i].TickPlacement = tempSlider.TickPlacement;
-                slds[i].HorizontalAlignment = HorizontalAlignment.Left;
-                panelHelp.Children.Add(slds[i]);
-                tek += ots;
+                else
+                {
+                    lbls[i].Margin = new Thickness(25, tekY, 0, 0);
+                    tekY += ots;
+                }
+                lbls[i].Content = forMenuLabels[i];
+                
+            }
+            tekY = 115;
+            int tekX = 25;
+            for(int i = 0; i < txtBoxsLow.Length; i+=2)
+            {
+                txtBoxsLow[i] = new TextBox();
+                txtBoxsLow[i].Margin = new Thickness(tekX, tekY, 0, 0);
+                txtBoxsLow[i+1] = new TextBox();
+                txtBoxsLow[i+1].Margin = new Thickness(tekX+60, tekY, 0, 0);
+                txtBoxsLow[i].Width = 50;
+                txtBoxsLow[i].Height = 20;
+                txtBoxsLow[i+1].Width = 50;
+                txtBoxsLow[i+1].Height = 20;
+                txtBoxsLow[i].HorizontalAlignment = HorizontalAlignment.Left;
+                txtBoxsLow[i].VerticalAlignment = VerticalAlignment.Top;
+                txtBoxsLow[i+1].HorizontalAlignment = HorizontalAlignment.Left;
+                txtBoxsLow[i+1].VerticalAlignment = VerticalAlignment.Top;
+                panelHelp.Children.Add(txtBoxsLow[i]);
+                panelHelp.Children.Add(txtBoxsLow[i+1]);
+                tekY += ots;
             }
             btnShow.HorizontalAlignment = HorizontalAlignment.Left;
             btnShow.VerticalAlignment = VerticalAlignment.Top;
-            btnShow.Width = 80;
-            btnShow.Height = 30;
-            btnShow.Margin = new Thickness(30, 305, 0, 0);
+            btnShow.Width = 100;
+            btnShow.Height = 40;
+            btnShow.Margin = new Thickness(30, 315, 0, 0);
             btnShow.Content = "Show";
            // btnShow.Background = new SolidColorBrush(Colors.Green);
             btnShow.BorderBrush = new SolidColorBrush(Colors.Green);
@@ -177,7 +175,7 @@ namespace ShopKeeper
             resetShow.Width = 50;
             resetShow.Height = 30;
             resetShow.Opacity = 80;
-            resetShow.Margin = new Thickness(30, 345, 0, 0);
+            resetShow.Margin = new Thickness(30, 365, 0, 0);
             resetShow.Content = "Reset";
             panelHelp.Children.Add(resetShow);
             resetShow.Click += resetShow_Click;
@@ -286,7 +284,7 @@ namespace ShopKeeper
                 priceCPULabels[i].FontWeight = price_Label.FontWeight;
             }
         }
-        private void Show_Cpus(int cores,int frenq,int price,bool intVideo, bool SO,string type="",string socket="")
+        private void Show_Cpus(int minCores,int maxCores,int minFrenq,int maxFrenq,int minPrice,int maxPrice, bool intVideo, bool SO,string type="",string socket="")
         {
             scrViewerCPUs.IsEnabled = true;
             scrViewerCPUs.Visibility = Visibility.Visible;
@@ -318,10 +316,13 @@ namespace ShopKeeper
             // panel.Children.Add(ScrViewerCPUs);
             for (int i = 0; i < arrGroupBoxsCPUs.Length; i++)
             {
-                if ((objCPU.cpuList.ElementAt(i).Value.socket_CPU == socket || socket == "") && objCPU.cpuList.ElementAt(i).Value.countCores_CPU>=cores
-                    && objCPU.cpuList.ElementAt(i).Value.frequency_CPU>=frenq && (objCPU.cpuList.ElementAt(i).Value.type_CPU==type || type=="")
-                    && objCPU.cpuList.ElementAt(i).Value.price_CPU>=price && intVideo == objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU 
-                    && objCPU.cpuList.ElementAt(i).Value.includedCS_CPU == SO)
+                if ((objCPU.cpuList.ElementAt(i).Value.socket_CPU == socket || socket == "") 
+                    && (objCPU.cpuList.ElementAt(i).Value.type_CPU == type || type == "")
+                    && (objCPU.cpuList.ElementAt(i).Value.countCores_CPU>=minCores && objCPU.cpuList.ElementAt(i).Value.countCores_CPU <= maxCores)
+                    && (objCPU.cpuList.ElementAt(i).Value.frequency_CPU>=minFrenq && objCPU.cpuList.ElementAt(i).Value.frequency_CPU <= maxFrenq)
+                    && (objCPU.cpuList.ElementAt(i).Value.price_CPU>=minPrice && objCPU.cpuList.ElementAt(i).Value.price_CPU <= maxPrice
+                    && intVideo == objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU 
+                    && objCPU.cpuList.ElementAt(i).Value.includedCS_CPU == SO))
                 {
                     arrGroupBoxsCPUs[i] = new GroupBox();
                     arrGridCPUs[i] = new Grid();
@@ -405,7 +406,7 @@ namespace ShopKeeper
         {
             panelHelp.Children.Clear();
             panelHelp.Children.Add(helperButton);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 panelHelp.Children.Add(btnsKritetiy[i]);
             }
@@ -420,5 +421,44 @@ namespace ShopKeeper
         }
 
         
+
+
+
+
+        //методы для кнопок
+        private void helperButtonShowOption(int r)
+        {
+            switch (r)
+            {
+                case 1: //скрыть или показать
+                    if (!isClickHelperButton)
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            btnsKritetiy[i].Visibility = Visibility.Visible;
+                            btnsKritetiy[i].IsEnabled = true;
+                        }
+
+                        isClickHelperButton = true;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < 4; i++)
+                            btnsKritetiy[i].Visibility = Visibility.Hidden;
+
+                        isClickHelperButton = false;
+                    }
+                    break;
+                case 2: //скрыть все
+                    
+                        for (int i = 0; i < 4; i++)
+                            btnsKritetiy[i].Visibility = Visibility.Hidden;
+                        isClickHelperButton = false;
+                    
+                    break;
+
+            }
+
+        }
     }
 }

@@ -60,14 +60,15 @@
         </GroupBox>
         <ScrollViewer x:Name="scrViewerCPUs" IsEnabled="False" Visibility="Hidden">
             <Grid x:Name="panel" HorizontalAlignment="Left" Height="1400" VerticalAlignment="Top" Width="797" Margin="50,0,0,-0.434" IsEnabled="False"/>
-            
+
 
         </ScrollViewer>
         <Grid x:Name="panelHelp" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="380" Margin="0,0,0,-0.434" IsEnabled="False">
             <Button x:Name="helperButton" Content="Помощь в выборе" HorizontalAlignment="Left" Margin="46,6,0,0" VerticalAlignment="Top" Width="141" RenderTransformOrigin="-1.193,-0.41" MouseEnter="HelperButton_MouseEnter" Height="20" MouseLeave="HelperButton_MouseLeave" Click="HelperButton_Click" Visibility="Hidden"/>
+            <Slider HorizontalAlignment="Left" Margin="317,115,-81,0" VerticalAlignment="Top" Width="144" Value="6000" Maximum="40000" TickFrequency="50" Visibility="Hidden"/>
         </Grid>
         <Slider x:Name="tempSlider" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="160" Minimum="1" Cursor="Arrow" SmallChange="1" TickPlacement="Both" Height="30" IsEnabled="False" Maximum="24" Visibility="Hidden"/>
         <Label x:Name="tempLabel" Content="Label" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="-6.372,-1.83" IsEnabled="False" FontSize="10" Visibility="Hidden"/>
-       
+
     </Grid>
 </Window>

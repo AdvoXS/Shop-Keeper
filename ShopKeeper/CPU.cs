@@ -17,8 +17,10 @@ namespace ShopKeeper
         public int price_CPU { get; set; }//стоимость процессора
         public bool integratedVideo_CPU { get; set; } //интегрированное видеоядро (APU?)
         public bool includedCS_CPU { get; set; }//система охлаждения в комплекте
+        static public string[] charactersCpu ={ "Количество ядер", "Тактовая частота", "Стоимость","Интегрированное видеоядро",
+                "Cистема охлаждения в комплекте" };
 
-        
+
         public CPU()
         {
             cpuList = new Dictionary<string, CPU>();

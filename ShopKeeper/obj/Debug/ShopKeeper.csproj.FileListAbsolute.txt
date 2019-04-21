@@ -13,3 +13,5 @@ C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.csproj.Gene
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.csproj.CoreCompileInputs.cache
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.exe
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\ShopKeeper.pdb
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\HelperWindow.g.cs
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\HelperWindow.baml

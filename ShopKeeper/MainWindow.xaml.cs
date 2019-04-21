@@ -47,6 +47,9 @@ namespace ShopKeeper
 
             isClickHelperButton = false;
         }
+
+
+        //Ivents
         public void but_Show_Click(object sender, EventArgs e)
         {
             clearViewCPUs();
@@ -63,9 +66,12 @@ namespace ShopKeeper
         }
         public void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            Show_Cpus();
-            showHelper();
-            panelHelp.IsEnabled = true;
+            //Show_Cpus();
+            //showHelper();
+            //panelHelp.IsEnabled = true;
+            HelperWindow helperWindow = new HelperWindow();
+            helperWindow.Show();
+            this.Close();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -94,8 +100,15 @@ namespace ShopKeeper
         {
             showHelpMenuLowBorders();
             helperButtonShowOption(1);
-
         }
+        private void suboptimisationButtonClick(object sender, RoutedEventArgs e)
+        {
+            showHelpMenuSuboptimisation();
+            helperButtonShowOption(1);
+        }
+
+
+        //Views
         TextBox[] txtBoxsLow;
         private void showHelper()
         {
@@ -106,7 +119,7 @@ namespace ShopKeeper
         CheckBox[] chBoxs;
         private void showHelpMenuLowBorders()
         {
-            clearHelpMenu();
+            clearHelpMenu(1);
             Label[] lbls = new Label[5];
             txtBoxsLow = new TextBox[6];
             chBoxs = new CheckBox[2];
@@ -180,6 +193,10 @@ namespace ShopKeeper
             panelHelp.Children.Add(resetShow);
             resetShow.Click += resetShow_Click;
 
+        }
+        private void showHelpMenuSuboptimisation()
+        {
+            clearHelpMenu();
         }
         private void Show_Cpus()
         {
@@ -402,15 +419,21 @@ namespace ShopKeeper
         {
             panel.Children.Clear();
         }
-        private void clearHelpMenu()
+        private void clearHelpMenu(int r=0)
         {
             panelHelp.Children.Clear();
-            panelHelp.Children.Add(helperButton);
-            for (int i = 0; i < 4; i++)
+            if (r == 1)
             {
-                panelHelp.Children.Add(btnsKritetiy[i]);
+                panelHelp.Children.Add(helperButton);
+                for (int i = 0; i < 4; i++)
+                {
+                    panelHelp.Children.Add(btnsKritetiy[i]);
+                }
             }
         }
+
+
+
         private void HelperButton_MouseEnter(object sender, MouseEventArgs e)
         {
            

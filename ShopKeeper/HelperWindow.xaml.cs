@@ -20,12 +20,12 @@ namespace ShopKeeper
     public partial class HelperWindow : Window
     {
         Image subOptimisationImage;
-        Label selectWindowLabelSelect;
-        Label lowBorderName;
-        Label lowBorderDescription;
-        Label subOptimisationDescription;
-        Button selectWindowNextButton;
+        Image leksiImage;
 
+        Label selectWindowLabelSelect;
+        Label lowBorderName, lowBorderDescription;
+        Label leksiName, leksiDescription;
+        Label subOptimisationDescription, subOptimisationName;
 
 
         public HelperWindow()
@@ -34,8 +34,22 @@ namespace ShopKeeper
             initElements();
             initLabelStartAnimation();
         }
+
         private void initElements()
-        {
+        {//инициализация элементов управления
+            
+            selectWindowLabelSelect = new Label();
+            selectWindowLabelSelect.Margin = new Thickness(this.Width / 3.5, this.Height / 36, 0, 0);
+            selectWindowLabelSelect.Style = welcomeLabel.Style;
+            selectWindowLabelSelect.FontFamily = welcomeLabel.FontFamily;
+            selectWindowLabelSelect.FontSize = welcomeLabel.FontSize;
+            selectWindowLabelSelect.FontStyle = welcomeLabel.FontStyle;
+            selectWindowLabelSelect.Content = "Выберите алгоритм подбора";
+            selectWindowLabelSelect.Foreground = buttonNext.Foreground;
+            selectWindowLabelSelect.FontWeight = welcomeLabel.FontWeight;
+            selectWindowLabelSelect.Opacity = 0;
+            mainCanvas.Children.Add(selectWindowLabelSelect);
+
             lowBorderImage = new Image();
             lowBorderImage.Margin = new Thickness(Width/20,Height/5,0,0);
             lowBorderImage.Opacity = 0;
@@ -47,32 +61,9 @@ namespace ShopKeeper
             lowBorderImage.Source = new BitmapImage(new Uri("helpersImages/LowBroderImage2.png", UriKind.Relative));
             lowBorderImage.MouseEnter += lowBorderImage_MouseOn;
             lowBorderImage.MouseLeave += lowBorderImage_MouseOut;
+            lowBorderImage.MouseUp += lowBorderImage_Click;
             mainCanvas.Children.Add(lowBorderImage);
             lowBorderImage.Visibility = Visibility.Hidden;
-
-            subOptimisationImage = new Image();
-            subOptimisationImage.Margin = new Thickness(Width / 3, Height / 5, 0, 0);
-            subOptimisationImage.Opacity = 0;
-            subOptimisationImage.HorizontalAlignment = HorizontalAlignment.Left;
-            subOptimisationImage.VerticalAlignment = VerticalAlignment.Top;
-            subOptimisationImage.Width = 150;
-            subOptimisationImage.Height = 150;
-            subOptimisationImage.Cursor = Cursors.Hand;
-            subOptimisationImage.Source = new BitmapImage(new Uri("helpersImages/suboptimisationImage.png", UriKind.Relative));
-            mainCanvas.Children.Add(subOptimisationImage);
-
-            selectWindowLabelSelect = new Label();
-            selectWindowLabelSelect.Margin = new Thickness(this.Width/3.5,this.Height/16,0,0);
-            selectWindowLabelSelect.Style = welcomeLabel.Style;
-            selectWindowLabelSelect.FontFamily = welcomeLabel.FontFamily;
-            selectWindowLabelSelect.FontSize = welcomeLabel.FontSize;
-            selectWindowLabelSelect.FontStyle = welcomeLabel.FontStyle;
-            selectWindowLabelSelect.Content = "Выберите алгоритм подбора";
-            selectWindowLabelSelect.Foreground = welcomeLabel.Foreground;
-            selectWindowLabelSelect.FontWeight = welcomeLabel.FontWeight;
-            selectWindowLabelSelect.Opacity = 0;
-            mainCanvas.Children.Add(selectWindowLabelSelect);
-
 
             lowBorderName = new Label();
             lowBorderName.Margin = new Thickness(Width / 45, Height / 1.45, 0, 0);
@@ -81,7 +72,7 @@ namespace ShopKeeper
             lowBorderName.FontSize = welcomeLabel.FontSize -12;
             lowBorderName.FontStyle = welcomeLabel.FontStyle;
             lowBorderName.Content = "Метод указания нижних границ";
-            lowBorderName.Foreground = welcomeLabel.Foreground;
+            lowBorderName.Foreground = buttonNext.Foreground;
             lowBorderName.FontWeight = welcomeLabel.FontWeight;
             lowBorderName.Opacity = 0;
             mainCanvas.Children.Add(lowBorderName);
@@ -93,9 +84,34 @@ namespace ShopKeeper
             lowBorderDescription.FontSize = welcomeLabel.FontSize - 14;
             lowBorderDescription.FontStyle = welcomeLabel.FontStyle;
             lowBorderDescription.Content = "Вам следует указать границы \nпараметров товара  вплоть до \nнахождения нужного.";
-            lowBorderDescription.Foreground = welcomeLabel.Foreground;
+            lowBorderDescription.Foreground = buttonNext.Foreground;
             lowBorderDescription.Visibility = Visibility.Hidden;
             mainCanvas.Children.Add(lowBorderDescription);
+
+            subOptimisationImage = new Image();
+            subOptimisationImage.Margin = new Thickness(Width / 3.3, Height / 5, 0, 0);
+            subOptimisationImage.Opacity = 0;
+            subOptimisationImage.HorizontalAlignment = HorizontalAlignment.Left;
+            subOptimisationImage.VerticalAlignment = VerticalAlignment.Top;
+            subOptimisationImage.Width = 150;
+            subOptimisationImage.Height = 150;
+            subOptimisationImage.Cursor = Cursors.Hand;
+            subOptimisationImage.Source = new BitmapImage(new Uri("helpersImages/suboptimisationImage.png", UriKind.Relative));
+            subOptimisationImage.MouseEnter += subOptimisationImage_MouseOn;
+            subOptimisationImage.MouseLeave += subOptimisationImage_MouseOut;
+            mainCanvas.Children.Add(subOptimisationImage);
+
+            subOptimisationName = new Label();
+            subOptimisationName.Margin = new Thickness(Width / 3.3, Height / 1.45, 0, 0);
+            subOptimisationName.Style = welcomeLabel.Style;
+            subOptimisationName.FontFamily = welcomeLabel.FontFamily;
+            subOptimisationName.FontSize = welcomeLabel.FontSize - 12;
+            subOptimisationName.FontStyle = welcomeLabel.FontStyle;
+            subOptimisationName.Content = "Метод субоптимизации";
+            subOptimisationName.Foreground = buttonNext.Foreground;
+            subOptimisationName.FontWeight = welcomeLabel.FontWeight;
+            subOptimisationName.Opacity = 0;
+            mainCanvas.Children.Add(subOptimisationName);
 
             subOptimisationDescription = new Label();
             subOptimisationDescription.Margin = new Thickness(Width / 3.5, Height / 1.45, 0, 0);
@@ -103,16 +119,48 @@ namespace ShopKeeper
             subOptimisationDescription.FontFamily = welcomeLabel.FontFamily;
             subOptimisationDescription.FontSize = welcomeLabel.FontSize - 14;
             subOptimisationDescription.FontStyle = welcomeLabel.FontStyle;
-            subOptimisationDescription.Content = "Вам следует указать главный критерий\n и границы параметров товара \nвплоть до нахождения \nнужного.";
-            subOptimisationDescription.Foreground = welcomeLabel.Foreground;
+            subOptimisationDescription.Content = "Вам следует указать главный критерий\n и границы параметров товара \nвплоть до нахождения нужного.";
+            subOptimisationDescription.Foreground = buttonNext.Foreground;
             subOptimisationDescription.Visibility = Visibility.Hidden;
             mainCanvas.Children.Add(subOptimisationDescription);
+
+            leksiImage = new Image();
+            leksiImage.Margin = new Thickness(Width / 1.8, Height / 5, 0, 0);
+            leksiImage.Opacity = 0;
+            leksiImage.HorizontalAlignment = HorizontalAlignment.Left;
+            leksiImage.VerticalAlignment = VerticalAlignment.Top;
+            leksiImage.Width = 150;
+            leksiImage.Height = 150;
+            leksiImage.Cursor = Cursors.Hand;
+
+            leksiImage.MouseEnter += leksiImage_MouseOn;
+            leksiImage.MouseLeave += leksiImage_MouseOut;
+            leksiImage.Source = new BitmapImage(new Uri("helpersImages/leksiImage.png", UriKind.Relative));
+            mainCanvas.Children.Add(leksiImage);
+
+            leksiName = new Label();
+            leksiName.Margin = new Thickness(Width / 1.85, Height / 1.45, 0, 0);
+            leksiName.Style = welcomeLabel.Style;
+            leksiName.FontFamily = welcomeLabel.FontFamily;
+            leksiName.FontSize = welcomeLabel.FontSize - 12;
+            leksiName.FontStyle = welcomeLabel.FontStyle;
+            leksiName.Content = "Лексикографический метод";
+            leksiName.Foreground = buttonNext.Foreground;
+            leksiName.FontWeight = welcomeLabel.FontWeight;
+            leksiName.Opacity = 0;
+            mainCanvas.Children.Add(leksiName);
+
+            leksiDescription = new Label();
+            leksiDescription.Margin = new Thickness(Width / 1.85, Height / 1.45, 0, 0);
+            leksiDescription.Style = welcomeLabel.Style;
+            leksiDescription.FontFamily = welcomeLabel.FontFamily;
+            leksiDescription.FontSize = welcomeLabel.FontSize - 14;
+            leksiDescription.FontStyle = welcomeLabel.FontStyle;
+            leksiDescription.Content = "Вам следует расставить приоритеты\n среди параметров товара.";
+            leksiDescription.Foreground = buttonNext.Foreground;
+            leksiDescription.Visibility = Visibility.Hidden;
+            mainCanvas.Children.Add(leksiDescription);
         }
-
-
-
-
-
 
         //Animations methods
 
@@ -159,29 +207,31 @@ namespace ShopKeeper
         private void selectWindowStartAnimation()
         { //появление элементов на экране выбора
             lowBorderImage.Visibility = Visibility.Visible;
-            selectWindowNextButton.IsEnabled = true;
             DoubleAnimation da = new DoubleAnimation();
             da.From = 0;
             da.To = this.Opacity + 10;
-            da.Duration = TimeSpan.FromSeconds(10);
+            da.Duration = TimeSpan.FromSeconds(5);
             selectWindowLabelSelect.BeginAnimation(Label.OpacityProperty, da);
 
             da.From = 0;
             da.To = this.Opacity + 15;
-            da.Duration = TimeSpan.FromSeconds(20);
+            da.Duration = TimeSpan.FromSeconds(10);
             lowBorderImage.BeginAnimation(Image.OpacityProperty, da);
 
             da.From = 0;
             da.To = this.Opacity + 10;
-            da.Duration = TimeSpan.FromSeconds(30);
+            da.Duration = TimeSpan.FromSeconds(10);
             lowBorderName.BeginAnimation(Label.OpacityProperty, da);
+            subOptimisationName.BeginAnimation(Label.OpacityProperty, da);
+            leksiName.BeginAnimation(Label.OpacityProperty, da);
 
             da.From = 0;
             da.To = this.Opacity + 15;
-            da.Duration = TimeSpan.FromSeconds(20);
+            da.Duration = TimeSpan.FromSeconds(10);
             subOptimisationImage.BeginAnimation(Image.OpacityProperty, da);
-            
 
+            leksiImage.BeginAnimation(Image.OpacityProperty, da);
+            
         }
 
         //Events methods
@@ -198,6 +248,8 @@ namespace ShopKeeper
             mainCanvas.IsEnabled = true;
             selectWindowStartAnimation();
         }
+
+        //LowBorderAlgorithm
         private void lowBorderImage_MouseOn(object sender, RoutedEventArgs e)
         {
             lowBorderName.Opacity = 0;
@@ -209,6 +261,40 @@ namespace ShopKeeper
             lowBorderName.Opacity = 100;
             lowBorderName.Visibility = Visibility.Visible;
             lowBorderDescription.Visibility = Visibility.Hidden;
+        }
+        private void lowBorderImage_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            this.IsEnabled = false;
+            WindowLowBorders windowLow = new WindowLowBorders(this);
+            windowLow.Show();
+        }
+
+        //subOptim
+        private void subOptimisationImage_MouseOn(object sender, RoutedEventArgs e)
+        {
+            subOptimisationName.Opacity = 0;
+            subOptimisationName.Visibility = Visibility.Hidden;
+            subOptimisationDescription.Visibility = Visibility.Visible;
+        }
+        private void subOptimisationImage_MouseOut(object sender, RoutedEventArgs e)
+        {
+            subOptimisationName.Opacity = 100;
+            subOptimisationName.Visibility = Visibility.Visible;
+            subOptimisationDescription.Visibility = Visibility.Hidden;
+        }
+
+        private void leksiImage_MouseOn(object sender, RoutedEventArgs e)
+        {
+            leksiName.Opacity = 0;
+            leksiName.Visibility = Visibility.Hidden;
+            leksiDescription.Visibility = Visibility.Visible;
+        }
+        private void leksiImage_MouseOut(object sender, RoutedEventArgs e)
+        {
+            leksiName.Opacity = 100;
+            leksiName.Visibility = Visibility.Visible;
+            leksiDescription.Visibility = Visibility.Hidden;
         }
     }
 }

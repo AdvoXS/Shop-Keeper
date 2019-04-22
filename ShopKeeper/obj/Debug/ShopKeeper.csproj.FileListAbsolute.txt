@@ -17,3 +17,5 @@ C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\HelperWindow.g.cs
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\HelperWindow.baml
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowLowBorders.g.cs
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowLowBorders.baml
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowShowProduct.g.cs
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowShowProduct.baml

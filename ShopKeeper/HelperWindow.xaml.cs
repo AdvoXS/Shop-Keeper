@@ -119,7 +119,7 @@ namespace ShopKeeper
             subOptimisationDescription.FontFamily = welcomeLabel.FontFamily;
             subOptimisationDescription.FontSize = welcomeLabel.FontSize - 14;
             subOptimisationDescription.FontStyle = welcomeLabel.FontStyle;
-            subOptimisationDescription.Content = "Вам следует указать главный критерий\n и границы параметров товара \nвплоть до нахождения нужного.";
+            subOptimisationDescription.Content = "Вам следует указать главный критерий\nи границы параметров товара \nвплоть до нахождения нужного.";
             subOptimisationDescription.Foreground = buttonNext.Foreground;
             subOptimisationDescription.Visibility = Visibility.Hidden;
             mainCanvas.Children.Add(subOptimisationDescription);
@@ -156,7 +156,7 @@ namespace ShopKeeper
             leksiDescription.FontFamily = welcomeLabel.FontFamily;
             leksiDescription.FontSize = welcomeLabel.FontSize - 14;
             leksiDescription.FontStyle = welcomeLabel.FontStyle;
-            leksiDescription.Content = "Вам следует расставить приоритеты\n среди параметров товара.";
+            leksiDescription.Content = "Вам следует расставить приоритеты\nсреди параметров товара.";
             leksiDescription.Foreground = buttonNext.Foreground;
             leksiDescription.Visibility = Visibility.Hidden;
             mainCanvas.Children.Add(leksiDescription);

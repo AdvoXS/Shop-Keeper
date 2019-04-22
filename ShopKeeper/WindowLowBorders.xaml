@@ -5,26 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopKeeper"
         mc:Ignorable="d"
-        Title="Указать нижние границы" Height="450" Width="499.924" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Closing="WinLowBorders_Closing">
+        Title="Указать нижние границы" Height="462.075" Width="499.924" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Closing="WinLowBorders_Closing">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="75,110,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="234,110,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
-        <Button x:Name="PreviousButton" Content="Отмена" HorizontalAlignment="Left" Margin="10,378,0,0" VerticalAlignment="Top" Width="72" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click"/>
+        <TextBox x:Name="coresTextBox1" HorizontalAlignment="Left" Height="23" Margin="75,110,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="coresTextBox2" HorizontalAlignment="Left" Height="23" Margin="234,110,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
+        <Button x:Name="PreviousButton" Content="Отмена" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="72" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click"/>
         <Label Content="Количество ядер" HorizontalAlignment="Left" Margin="44,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="130" FontSize="14" Foreground="White"/>
         <Label Content="От" HorizontalAlignment="Left" Margin="44,110,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <Label Content="До" HorizontalAlignment="Left" Margin="203,110,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="75,190,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="234,190,0,0" TextWrapping="Wrap" Text="4000" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True" Foreground="Black"/>
+        <TextBox x:Name="frenqTextBox1" HorizontalAlignment="Left" Height="23" Margin="75,190,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="frenqTextBox2" HorizontalAlignment="Left" Height="23" Margin="234,190,0,0" TextWrapping="Wrap" Text="4000" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True" Foreground="Black"/>
         <Label Content="Тактовая частота" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="130" FontSize="14" Foreground="White"/>
         <Label Content="От" HorizontalAlignment="Left" Margin="44,190,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="75,265,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="234,265,0,0" TextWrapping="Wrap" Text="30000" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
+        <TextBox x:Name="priceTextBox1" HorizontalAlignment="Left" Height="23" Margin="75,265,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="priceTextBox2" HorizontalAlignment="Left" Height="23" Margin="234,265,0,0" TextWrapping="Wrap" Text="30000" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
         <Label Content="Цена" HorizontalAlignment="Left" Margin="44,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="47" FontSize="14" Foreground="White"/>
         <Label Content="От" HorizontalAlignment="Left" Margin="44,265,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <Label Content="До" HorizontalAlignment="Left" Margin="203,189,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <Label Content="До" HorizontalAlignment="Left" Margin="203,265,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
-        <Button x:Name="PreviousButton_Copy" Content="Продолжить" HorizontalAlignment="Left" Margin="236,371,0,0" VerticalAlignment="Top" Width="118" Height="31" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="16" FontWeight="Bold" Foreground="#FFF5E9E9"/>
+        <Button x:Name="PreviousButton_Copy" Content="Продолжить" HorizontalAlignment="Left" Margin="357,386,0,0" VerticalAlignment="Top" Width="118" Height="31" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="16" FontWeight="Bold" Foreground="#FFF5E9E9" Click="PreviousButton_Copy_Click"/>
         <Label Content="Указание нижних границ" HorizontalAlignment="Left" Margin="44,25,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="276" FontFamily="Segoe UI Black" FontSize="20" Foreground="White"/>
+        <CheckBox x:Name="checkSO" Content="Наличие системы охлаждения" HorizontalAlignment="Left" Margin="51,305,0,0" VerticalAlignment="Top" Width="178" Foreground="White"/>
+        <CheckBox x:Name="checkVideo" Content="Наличие интегрированного видеоядра" HorizontalAlignment="Left" Margin="51,331,0,0" VerticalAlignment="Top" Width="221" Foreground="White"/>
+        <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="293,300,0,0" VerticalAlignment="Top" Width="182" Height="73" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12"/>
 
     </Grid>
 </Window>

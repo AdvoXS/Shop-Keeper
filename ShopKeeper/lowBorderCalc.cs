@@ -9,12 +9,13 @@ namespace ShopKeeper
     class lowBorderCalc
     {
         CPU objCPU;
-        int countFoundedCPUs;
-        List<int> indexFoundedCPUs;
+        public int countFoundedCPUs;
+        public List<int> indexFoundedCPUs;
         public lowBorderCalc(int minCores, int maxCores, int minFrenq, int maxFrenq,
             int minPrice, int maxPrice, bool intVideo, bool SO, string type = "", string socket = "")
         {
             objCPU = new CPU();
+            indexFoundedCPUs = new List<int>();
             countFoundedCPUs = 0;
             for (int i = 0; i < objCPU.GetCountCPUs(); i++)
             {

@@ -37,7 +37,7 @@ namespace ShopKeeper
 
         private void initElements()
         {//инициализация элементов управления
-            
+            okrezhim = true;
             selectWindowLabelSelect = new Label();
             selectWindowLabelSelect.Margin = new Thickness(this.Width / 3.5, this.Height / 36, 0, 0);
             selectWindowLabelSelect.Style = welcomeLabel.Style;
@@ -246,6 +246,7 @@ namespace ShopKeeper
             welcomeLabel.IsEnabled = false;
             startLabel1.IsEnabled = false;
             mainCanvas.IsEnabled = true;
+            rezhim.Opacity = 100;
             selectWindowStartAnimation();
         }
 
@@ -277,6 +278,31 @@ namespace ShopKeeper
             subOptimisationName.Visibility = Visibility.Hidden;
             subOptimisationDescription.Visibility = Visibility.Visible;
         }
+        bool okrezhim;
+        private void Label_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (okrezhim)
+            {
+                DoubleAnimation da2 = new DoubleAnimation();
+                da2.From = helps.Height;
+                da2.To = helps.Height + 100;
+                da2.Duration = TimeSpan.FromSeconds(1);
+                helps.BeginAnimation(Window.HeightProperty, da2);
+                rezhim.Content = "Режим эксперта";
+                okrezhim = false;
+            }
+            else
+            {
+                DoubleAnimation da2 = new DoubleAnimation();
+                da2.From = helps.Height;
+                da2.To = helps.Height - 100;
+                da2.Duration = TimeSpan.FromSeconds(1);
+                helps.BeginAnimation(Window.HeightProperty, da2);
+                rezhim.Content = "Обычный режим";
+                okrezhim = true;
+            }
+        }
+
         private void subOptimisationImage_MouseOut(object sender, RoutedEventArgs e)
         {
             subOptimisationName.Opacity = 100;

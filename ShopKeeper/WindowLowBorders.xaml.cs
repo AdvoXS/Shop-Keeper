@@ -24,7 +24,7 @@ namespace ShopKeeper
         {
             InitializeComponent();
             windowSelect = windowParent;
-            searched = false;
+            //searched = false;
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
@@ -41,7 +41,7 @@ namespace ShopKeeper
             windowSelect.IsEnabled = true;
             windowSelect.Show();
         }
-        bool searched;
+        //bool searched;
         private void PreviousButton_Copy_Click(object sender, RoutedEventArgs e)
         {
             if(coresTextBox1.Text!="" && coresTextBox2.Text!=""&& frenqTextBox1.Text!="" 

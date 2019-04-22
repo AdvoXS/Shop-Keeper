@@ -27,7 +27,7 @@
         <Label Content="Указание нижних границ" HorizontalAlignment="Left" Margin="44,25,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="276" FontFamily="Segoe UI Black" FontSize="20" Foreground="White"/>
         <CheckBox x:Name="checkSO" Content="Наличие системы охлаждения" HorizontalAlignment="Left" Margin="51,305,0,0" VerticalAlignment="Top" Width="178" Foreground="White"/>
         <CheckBox x:Name="checkVideo" Content="Наличие интегрированного видеоядра" HorizontalAlignment="Left" Margin="51,331,0,0" VerticalAlignment="Top" Width="221" Foreground="White"/>
-        <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="293,300,0,0" VerticalAlignment="Top" Width="182" Height="73" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12"/>
+        <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="293,300,0,0" VerticalAlignment="Top" Width="182" Height="73" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12" MouseUp="FoundedLabel_MouseUp"/>
 
     </Grid>
 </Window>

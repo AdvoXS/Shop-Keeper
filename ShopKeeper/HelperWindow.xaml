@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopKeeper"
         mc:Ignorable="d"
-        Title="HelperWindow" Height="312.793" Width="800" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+        Title="Помощник" Height="312.793" Width="800" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
     <Grid>
         <Label x:Name="welcomeLabel" Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="272,42,0,0" VerticalAlignment="Top" Width="297" Height="67" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" FontSize="24" FontWeight="Bold" Opacity="0" Initialized="Label_Initialized">
 

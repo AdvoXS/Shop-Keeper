@@ -75,5 +75,10 @@ namespace ShopKeeper
                 }
             }
         }
+
+        private void FoundedLabel_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            foundedLabel.Opacity = 0;
+        }
     }
 }

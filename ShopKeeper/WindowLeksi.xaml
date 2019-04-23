@@ -7,27 +7,27 @@
         mc:Ignorable="d"
         Title="Лексикографический метод" Height="417.287" Width="584.685" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Closed="WinLeksi_Closed">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="240" Margin="51,73,0,0" VerticalAlignment="Top" Width="479">
+        <StackPanel x:Name="mainStackPanel" HorizontalAlignment="Left" Height="240" Margin="51,73,0,0" VerticalAlignment="Top" Width="479">
             <Grid x:Name="multiGrid" Height="80" Background="#FF68D5E5">
 
                 <Label Content="Многозадачность" Margin="126,16,124.094,10" FontSize="24" FontWeight="Bold"/>
                 <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/Монтажная область 1.png"/>
-                <Button Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
-                <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button x:Name="multiBtnUp" Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button x:Name="multiBtnDown" Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
 
             </Grid>
             <Grid x:Name="speedGrid" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="479" Background="#FF6BF1B5">
                 <Label Content="Быстродействие" Margin="126,16,137,10" FontSize="24" FontWeight="Bold"/>
                 <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/44.png"/>
-                <Button Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
-                <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button x:Name="speedBtnUp" Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button x:Name="speedBtnDown" Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
             </Grid>
             <Grid x:Name="gameGrid" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="479" Background="#FFBE65EF">
-                <Label Content="Работа с играми" Margin="126,16,123,10" FontSize="24" FontWeight="Bold"/>
+                <Label Content="Графика" Margin="126,16,123,10" FontSize="24" FontWeight="Bold"/>
                 <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/55.png"/>
-                <Button Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button x:Name="gameBtnUp" Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
                 <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
-                <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button x:Name="gameBtnDown" Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
             </Grid>
 
 

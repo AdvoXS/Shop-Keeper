@@ -1,0 +1,41 @@
+﻿<Window x:Name="winLeksi" x:Class="ShopKeeper.WindowLeksi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopKeeper"
+        mc:Ignorable="d"
+        Title="Лексикографический метод" Height="417.287" Width="584.685" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Closed="WinLeksi_Closed">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="240" Margin="51,73,0,0" VerticalAlignment="Top" Width="479">
+            <Grid x:Name="multiGrid" Height="80" Background="#FF68D5E5">
+
+                <Label Content="Многозадачность" Margin="126,16,124.094,10" FontSize="24" FontWeight="Bold"/>
+                <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/Монтажная область 1.png"/>
+                <Button Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+
+            </Grid>
+            <Grid x:Name="speedGrid" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="479" Background="#FF6BF1B5">
+                <Label Content="Быстродействие" Margin="126,16,137,10" FontSize="24" FontWeight="Bold"/>
+                <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/44.png"/>
+                <Button Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+            </Grid>
+            <Grid x:Name="gameGrid" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="479" Background="#FFBE65EF">
+                <Label Content="Работа с играми" Margin="126,16,123,10" FontSize="24" FontWeight="Bold"/>
+                <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/55.png"/>
+                <Button Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+                <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
+            </Grid>
+
+
+
+        </StackPanel>
+        <Label Content="Приоритетность" HorizontalAlignment="Left" Margin="210,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="164" FontFamily="Segoe UI Black" FontSize="18" Foreground="White"/>
+        <Label Content="Расставьте критерии в порядке приоритетности" HorizontalAlignment="Left" Margin="172,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="244" FontFamily="Segoe UI Light" Foreground="White"/>
+        <Button Content="Показать" HorizontalAlignment="Left" Margin="210,330,0,0" VerticalAlignment="Top" Width="172" Height="38" FontSize="22" FontWeight="Bold" Foreground="White" Background="#FF3AB98F" BorderBrush="#FF3AB98F"/>
+
+    </Grid>
+</Window>

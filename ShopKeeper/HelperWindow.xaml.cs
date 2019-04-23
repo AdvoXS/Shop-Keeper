@@ -135,6 +135,7 @@ namespace ShopKeeper
 
             leksiImage.MouseEnter += leksiImage_MouseOn;
             leksiImage.MouseLeave += leksiImage_MouseOut;
+            leksiImage.MouseUp += leksiImage_Click;
             leksiImage.Source = new BitmapImage(new Uri("helpersImages/leksiImage.png", UriKind.Relative));
             mainCanvas.Children.Add(leksiImage);
 
@@ -321,6 +322,13 @@ namespace ShopKeeper
             leksiName.Opacity = 100;
             leksiName.Visibility = Visibility.Visible;
             leksiDescription.Visibility = Visibility.Hidden;
+        }
+        private void leksiImage_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            this.IsEnabled = false;
+            WindowLeksi windowLow = new WindowLeksi(this);
+            windowLow.Show();
         }
     }
 }

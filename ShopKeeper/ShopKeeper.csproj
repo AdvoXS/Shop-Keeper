@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="WindowLeksi.xaml.cs">
+      <DependentUpon>WindowLeksi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowLowBorders.xaml.cs">
       <DependentUpon>WindowLowBorders.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WindowLeksi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowLowBorders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,7 +122,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="leksiIcons\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CPU.jpg" />
@@ -154,6 +161,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="helpersImages\leksiImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="leksiIcons\Монтажнаь 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="leksiIcons\Монтажная область 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="leksiIcons\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="leksiIcons\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="leksiIcons\55.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,20 +10,20 @@
         <StackPanel x:Name="mainStackPanel" HorizontalAlignment="Left" Height="240" Margin="51,73,0,0" VerticalAlignment="Top" Width="479">
             <Grid x:Name="multiGrid" Height="80" Background="#FF68D5E5">
 
-                <Label Content="Многозадачность" Margin="126,16,124.094,10" FontSize="24" FontWeight="Bold"/>
+                <Label Content="Количество ядер" Margin="126,16,124.094,10" FontSize="24" FontWeight="Bold"/>
                 <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/Монтажная область 1.png"/>
                 <Button x:Name="multiBtnUp" Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
                 <Button x:Name="multiBtnDown" Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
 
             </Grid>
             <Grid x:Name="speedGrid" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="479" Background="#FF6BF1B5">
-                <Label Content="Быстродействие" Margin="126,16,137,10" FontSize="24" FontWeight="Bold"/>
+                <Label Content="Тактовая частота" Margin="126,16,137,10" FontSize="24" FontWeight="Bold"/>
                 <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/44.png"/>
                 <Button x:Name="speedBtnUp" Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
                 <Button x:Name="speedBtnDown" Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
             </Grid>
             <Grid x:Name="gameGrid" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="479" Background="#FFBE65EF">
-                <Label Content="Графика" Margin="126,16,123,10" FontSize="24" FontWeight="Bold"/>
+                <Label Content="Цена" Margin="126,16,123,10" FontSize="24" FontWeight="Bold"/>
                 <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/55.png"/>
                 <Button x:Name="gameBtnUp" Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
                 <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
@@ -35,7 +35,7 @@
         </StackPanel>
         <Label Content="Приоритетность" HorizontalAlignment="Left" Margin="210,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="164" FontFamily="Segoe UI Black" FontSize="18" Foreground="White"/>
         <Label Content="Расставьте критерии в порядке приоритетности" HorizontalAlignment="Left" Margin="172,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="244" FontFamily="Segoe UI Light" Foreground="White"/>
-        <Button Content="Показать" HorizontalAlignment="Left" Margin="210,330,0,0" VerticalAlignment="Top" Width="172" Height="38" FontSize="22" FontWeight="Bold" Foreground="White" Background="#FF3AB98F" BorderBrush="#FF3AB98F"/>
+        <Button Content="Показать" HorizontalAlignment="Left" Margin="210,330,0,0" VerticalAlignment="Top" Width="172" Height="38" FontSize="22" FontWeight="Bold" Foreground="White" Background="#FF3AB98F" BorderBrush="#FF3AB98F" Click="Button_Click"/>
 
     </Grid>
 </Window>

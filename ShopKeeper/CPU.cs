@@ -49,7 +49,7 @@ namespace ShopKeeper
             cpuList.Add("AMD Sempron 2650 BOX", new CPU("Home", "AM1", 1450, 2, 1599, true, true));
             cpuToImageCPU.Add("AMD Sempron 2650 BOX", "Pictures_CPU/AMD_SEPRON_2650.jpg");
             //2
-            cpuList.Add("AMD Athlon 200GE OEM", new CPU("Home", "AM4", 3200, 4, 2799, true, false));
+            cpuList.Add("AMD Athlon 200GE OEM", new CPU("Home", "AM4", 3200, 4, 1599, true, false));
             cpuToImageCPU.Add("AMD Athlon 200GE OEM", "Pictures_CPU/AMD_ATHLON_200GE.jpg");
             //3
             cpuList.Add("Intel Celeron G3930 BOX", new CPU("Home", "LGA 1511", 2900, 2, 3350, true, true));

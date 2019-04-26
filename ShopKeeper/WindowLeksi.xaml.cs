@@ -92,5 +92,17 @@ namespace ShopKeeper
             parentForm.IsEnabled = true;
             parentForm.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            leksiCalcClass calc = new leksiCalcClass(gridStatus);
+            calc.Calc();
+            if (calc.countFounded == 1)
+            {
+                WindowShowProduct shower = new WindowShowProduct(calc.indexFounded, this);
+                shower.Show();
+                Hide();
+            }
+        }
     }
 }

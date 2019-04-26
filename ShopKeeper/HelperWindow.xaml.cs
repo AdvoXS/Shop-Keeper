@@ -99,6 +99,7 @@ namespace ShopKeeper
             subOptimisationImage.Source = new BitmapImage(new Uri("helpersImages/suboptimisationImage.png", UriKind.Relative));
             subOptimisationImage.MouseEnter += subOptimisationImage_MouseOn;
             subOptimisationImage.MouseLeave += subOptimisationImage_MouseOut;
+            subOptimisationImage.MouseUp += subOptimImage_Click;
             mainCanvas.Children.Add(subOptimisationImage);
 
             subOptimisationName = new Label();
@@ -328,6 +329,13 @@ namespace ShopKeeper
             Hide();
             this.IsEnabled = false;
             WindowLeksi windowLow = new WindowLeksi(this);
+            windowLow.Show();
+        }
+        private void subOptimImage_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            this.IsEnabled = false;
+            WindowSubOptim windowLow = new WindowSubOptim(this);
             windowLow.Show();
         }
     }

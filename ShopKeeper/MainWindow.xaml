@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopKeeper"
         mc:Ignorable="d"
-        Title="Shop Keeper" Height="209.04" Width="552.251" SizeChanged="MainWindow_SizeChanged" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF0078CC">
+        Title="Shop Keeper" Height="220.512" Width="552.251" SizeChanged="MainWindow_SizeChanged" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF0078CC">
     <Grid>
         <Label x:Name="labelQuestion1" Content="Выберите что хотите приобрести" HorizontalAlignment="Left" Margin="137,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="325" FontSize="20" Foreground="White">
 
@@ -18,8 +18,8 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="labelCPU" Content="Процессор" HorizontalAlignment="Left" Margin="120,129,0,0" VerticalAlignment="Top" Width="96" FontSize="16" FontFamily="Segoe UI Semibold" Foreground="White"/>
-        <Image x:Name="imageCPU" HorizontalAlignment="Left" Height="84" Margin="86,52,0,0" VerticalAlignment="Top" Width="154" Source="CPU.jpg" Stretch="Fill" MouseUp="Image_MouseUp" Opacity="0.97" MouseDown="Image_MouseDown" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="labelCPU" Content="Процессор" HorizontalAlignment="Left" Margin="238,146,0,0" VerticalAlignment="Top" Width="96" FontSize="16" FontFamily="Segoe UI Semibold" Foreground="White"/>
+        <Image x:Name="imageCPU" HorizontalAlignment="Left" Height="101" Margin="168,47,0,0" VerticalAlignment="Top" Width="227" Source="CPU.jpg" Stretch="Fill" MouseUp="Image_MouseUp" Opacity="0.97" MouseDown="Image_MouseDown" Cursor="Hand" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>

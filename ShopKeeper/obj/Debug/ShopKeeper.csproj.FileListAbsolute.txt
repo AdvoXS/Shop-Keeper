@@ -21,3 +21,5 @@ C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowShowProduct.g.cs
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowShowProduct.baml
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowLeksi.g.cs
 C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowLeksi.baml
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowSubOptim.g.cs
+C:\Users\Fox\source\repos\ShopKeeper\ShopKeeper\obj\Debug\WindowSubOptim.baml

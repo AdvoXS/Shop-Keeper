@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="leksiCalcClass.cs" />
+    <Compile Include="SubOptimCalcClass.cs" />
     <Compile Include="WindowLeksi.xaml.cs">
       <DependentUpon>WindowLeksi.xaml</DependentUpon>
     </Compile>
@@ -64,6 +65,9 @@
     </Compile>
     <Compile Include="WindowShowProduct.xaml.cs">
       <DependentUpon>WindowShowProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowSubOptim.xaml.cs">
+      <DependentUpon>WindowSubOptim.xaml</DependentUpon>
     </Compile>
     <Page Include="HelperWindow.xaml">
       <SubType>Designer</SubType>
@@ -95,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowShowProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowSubOptim.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

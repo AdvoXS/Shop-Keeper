@@ -18,8 +18,8 @@ namespace ShopKeeper
         public MainWindow()
         {
             InitializeComponent();
-            init_Elements();
-            //Show_Cpus();
+            //init_Elements();
+            
         }
         private void init_Elements()
         {
@@ -66,12 +66,12 @@ namespace ShopKeeper
         }
         public void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            //Show_Cpus();
+            Show_Cpus();
             //showHelper();
             //panelHelp.IsEnabled = true;
             HelperWindow helperWindow = new HelperWindow();
             helperWindow.Show();
-            this.Close();
+            //this.Close();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -234,7 +234,7 @@ namespace ShopKeeper
                 arrGridCPUs[i] = new Grid();
                 //create GroupBoxes for CPU view
                 arrGroupBoxsCPUs[i].Content = arrGridCPUs[i];
-                arrGroupBoxsCPUs[i].Margin = new Thickness(359, tek, 0, 0);
+                arrGroupBoxsCPUs[i].Margin = new Thickness(2, tek, 0, 0);
                 arrGroupBoxsCPUs[i].HorizontalAlignment = HorizontalAlignment.Left;
                 arrGroupBoxsCPUs[i].Height = 103;
                 arrGroupBoxsCPUs[i].Width = 311;

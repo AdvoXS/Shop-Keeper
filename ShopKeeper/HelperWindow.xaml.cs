@@ -395,7 +395,7 @@ namespace ShopKeeper
         {
             Hide();
             this.IsEnabled = false;
-            WindowObs windowLow = new WindowObs();
+            WindowObs windowLow = new WindowObs(this);
             windowLow.Show();
         }
     }

@@ -20,9 +20,11 @@ namespace ShopKeeper
     public partial class WindowObs : Window
     {
         obsCalcClass calc;
-        public WindowObs()
+        Window parentForm;
+        public WindowObs(Window parentWindow)
         {
             InitializeComponent();
+            parentForm = parentWindow;
         }
 
         private void PreviousButton_Copy_Click(object sender, RoutedEventArgs e)
@@ -38,7 +40,15 @@ namespace ShopKeeper
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
+            parentForm.IsEnabled = true;
+            parentForm.Show();
+            Close();
+        }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            parentForm.IsEnabled = true;
+            parentForm.Show();
         }
     }
 }

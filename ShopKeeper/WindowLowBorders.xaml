@@ -9,7 +9,7 @@
     <Grid>
         <TextBox x:Name="coresTextBox1" HorizontalAlignment="Left" Height="23" Margin="75,110,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="coresTextBox2" HorizontalAlignment="Left" Height="23" Margin="234,110,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
-        <Button x:Name="PreviousButton" Content="Отмена" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="72" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click"/>
+        <Button x:Name="PreviousButton" Content="Назад" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="72" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click"/>
         <Label Content="Количество ядер" HorizontalAlignment="Left" Margin="44,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="130" FontSize="14" Foreground="White"/>
         <Label Content="От" HorizontalAlignment="Left" Margin="44,110,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <Label Content="До" HorizontalAlignment="Left" Margin="203,110,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>

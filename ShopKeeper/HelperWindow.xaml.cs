@@ -21,12 +21,12 @@ namespace ShopKeeper
     {
         Image subOptimisationImage;
         Image leksiImage;
-
+        Image obsImage;
         Label selectWindowLabelSelect;
         Label lowBorderName, lowBorderDescription;
         Label leksiName, leksiDescription;
         Label subOptimisationDescription, subOptimisationName;
-
+        Label obsName, obsDescription;
 
         public HelperWindow()
         {
@@ -137,7 +137,7 @@ namespace ShopKeeper
             leksiImage.MouseEnter += leksiImage_MouseOn;
             leksiImage.MouseLeave += leksiImage_MouseOut;
             leksiImage.MouseUp += leksiImage_Click;
-            leksiImage.Source = new BitmapImage(new Uri("helpersImages/leksiImage.png", UriKind.Relative));
+            leksiImage.Source = new BitmapImage(new Uri("helpersImages/47.png", UriKind.Relative));
             mainCanvas.Children.Add(leksiImage);
 
             leksiName = new Label();
@@ -162,6 +162,42 @@ namespace ShopKeeper
             leksiDescription.Foreground = buttonNext.Foreground;
             leksiDescription.Visibility = Visibility.Hidden;
             mainCanvas.Children.Add(leksiDescription);
+
+            obsImage = new Image();
+            obsImage.Margin = new Thickness(Width / 1.27, Height / 5, 0, 0);
+            obsImage.Opacity = 0;
+            obsImage.HorizontalAlignment = HorizontalAlignment.Left;
+            obsImage.VerticalAlignment = VerticalAlignment.Top;
+            obsImage.Width = 150;
+            obsImage.Height = 150;
+            obsImage.Cursor = Cursors.Hand;
+            obsImage.MouseEnter += obsImage_MouseOn;
+            obsImage.MouseLeave += obsImage_MouseOut;
+            obsImage.Source = new BitmapImage(new Uri("helpersImages/obs1.png", UriKind.Relative));
+            mainCanvas.Children.Add(obsImage);
+
+            obsName = new Label();
+            obsName.Margin = new Thickness(Width / 1.25, Height / 1.45, 0, 0);
+            obsName.Style = welcomeLabel.Style;
+            obsName.FontFamily = welcomeLabel.FontFamily;
+            obsName.FontSize = welcomeLabel.FontSize - 12;
+            obsName.FontStyle = welcomeLabel.FontStyle;
+            obsName.Content = "Обобщенный метод";
+            obsName.Foreground = buttonNext.Foreground;
+            obsName.FontWeight = welcomeLabel.FontWeight;
+            obsName.Opacity = 0;
+            mainCanvas.Children.Add(obsName);
+
+            obsDescription = new Label();
+            obsDescription.Margin = new Thickness(Width / 1.26, Height / 1.45, 0, 0);
+            obsDescription.Style = welcomeLabel.Style;
+            obsDescription.FontFamily = welcomeLabel.FontFamily;
+            obsDescription.FontSize = welcomeLabel.FontSize - 14;
+            obsDescription.FontStyle = welcomeLabel.FontStyle;
+            obsDescription.Content = "Вам следует расставить веса \nпараметрам.\nЧем больше вес, тем приоритетней.";
+            obsDescription.Foreground = buttonNext.Foreground;
+            obsDescription.Visibility = Visibility.Hidden;
+            mainCanvas.Children.Add(obsDescription);
         }
 
         //Animations methods
@@ -226,6 +262,7 @@ namespace ShopKeeper
             lowBorderName.BeginAnimation(Label.OpacityProperty, da);
             subOptimisationName.BeginAnimation(Label.OpacityProperty, da);
             leksiName.BeginAnimation(Label.OpacityProperty, da);
+            obsName.BeginAnimation(Label.OpacityProperty, da);
 
             da.From = 0;
             da.To = this.Opacity + 15;
@@ -233,7 +270,7 @@ namespace ShopKeeper
             subOptimisationImage.BeginAnimation(Image.OpacityProperty, da);
 
             leksiImage.BeginAnimation(Image.OpacityProperty, da);
-            
+            obsImage.BeginAnimation(Image.OpacityProperty, da);
         }
 
         //Events methods
@@ -337,6 +374,21 @@ namespace ShopKeeper
             this.IsEnabled = false;
             WindowSubOptim windowLow = new WindowSubOptim(this);
             windowLow.Show();
+        }
+
+        //Обобщенный метод Events
+
+        private void obsImage_MouseOn(object sender, RoutedEventArgs e)
+        {
+            obsName.Opacity = 0;
+            obsName.Visibility = Visibility.Hidden;
+            obsDescription.Visibility = Visibility.Visible;
+        }
+        private void obsImage_MouseOut(object sender, RoutedEventArgs e)
+        {
+            obsName.Opacity = 100;
+            obsName.Visibility = Visibility.Visible;
+            obsDescription.Visibility = Visibility.Hidden;
         }
     }
 }

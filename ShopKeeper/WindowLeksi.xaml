@@ -24,7 +24,7 @@
             </Grid>
             <Grid x:Name="gameGrid" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="479" Background="#FFBE65EF">
                 <Label Content="Цена" Margin="126,16,123,10" FontSize="24" FontWeight="Bold"/>
-                <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="93" Source="leksiIcons/55.png"/>
+                <Image HorizontalAlignment="Left" Height="70" Margin="10,5,0,0" VerticalAlignment="Top" Width="96" Source="leksiIcons/money.png"/>
                 <Button x:Name="gameBtnUp" Content="↑" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
                 <Button Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>
                 <Button x:Name="gameBtnDown" Content="↓" HorizontalAlignment="Left" Margin="445,41,0,0" VerticalAlignment="Top" Width="24" Height="29" FontSize="20" FontFamily="Source Sans Pro" Background="#7F45A4A4" Foreground="White" BorderBrush="#0745A4A4"/>

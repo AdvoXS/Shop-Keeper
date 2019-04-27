@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="leksiCalcClass.cs" />
+    <Compile Include="obsCalcClass.cs" />
     <Compile Include="SubOptimCalcClass.cs" />
     <Compile Include="WindowLeksi.xaml.cs">
       <DependentUpon>WindowLeksi.xaml</DependentUpon>
@@ -188,6 +189,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="leksiIcons\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="helpersImages\obs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="helpersImages\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="helpersImages\obs1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="leksiIcons\money.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

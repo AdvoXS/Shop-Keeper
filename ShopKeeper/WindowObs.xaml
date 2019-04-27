@@ -11,9 +11,9 @@
         <Label Content="Тактовая частота" HorizontalAlignment="Left" Margin="22,70,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
         <Label Content="Стоимость" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
         <Label Content="Расставьте веса" HorizontalAlignment="Left" Margin="63,0,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="168,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
+        <TextBox x:Name="coresTextBox" HorizontalAlignment="Left" Height="23" Margin="168,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
+        <TextBox x:Name="taktTextBox" HorizontalAlignment="Left" Height="23" Margin="168,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
+        <TextBox x:Name="priceTextBox" HorizontalAlignment="Left" Height="23" Margin="168,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
         <Button x:Name="PreviousButton" Content="Отмена" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" Width="72" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click"/>
         <Button x:Name="PreviousButton_Copy" Content="Продолжить" HorizontalAlignment="Left" Margin="168,154,0,0" VerticalAlignment="Top" Width="118" Height="31" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="16" FontWeight="Bold" Foreground="#FFF5E9E9" Click="PreviousButton_Copy_Click"/>
 

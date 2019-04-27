@@ -10,7 +10,7 @@ namespace ShopKeeper
     {
         CPU objCPU;
         int []weightsCPU;
-        int indexFounded;
+        public int indexFounded;
         public obsCalcClass(float coresWeight,float taktWeight,float priceWeight)
         {
             objCPU = new CPU();
@@ -19,52 +19,52 @@ namespace ShopKeeper
         }
         private void normCPUS()
         {
-            int steps = 5;
+            int steps = 20;
 
-            int minCores = 2;
-            int maxCores = 17;
-            int minTakt = 1450;
-            int maxTakt = 3802;
-            int minPrice = 1600;
-            int maxPrice = 22502;
+            float minCores = 1;
+            float maxCores = 16;
+            float minTakt = 1446;
+            float maxTakt = 3806;
+            float minPrice = 1597;
+            float maxPrice = 26301;
 
             float stepCores = (maxCores - minCores) / steps;
             float stepTakt = (maxTakt - minTakt) / steps;
             float stepPrice = (maxPrice-minPrice) / steps;
 
-            float[] stepsCores = new float[steps];
-            float[] stepsTakt = new float[steps];
-            float[] stepsPrice = new float[steps];
+            float[] stepsCores = new float[steps+1];
+            float[] stepsTakt = new float[steps+1];
+            float[] stepsPrice = new float[steps+1];
             stepsCores[0] = minCores;
             stepsTakt[0] = minTakt;
             stepsPrice[0] = minPrice;
 
-            for(int i = 1; i < steps; i++)
+            for(int i = 1; i < steps+1; i++)
             {
                 stepsCores[i] = stepsCores[i - 1] + stepCores;
                 stepsTakt[i] = stepsTakt[i - 1] + stepTakt;
                 stepsPrice[i] = stepsPrice[i - 1] + stepPrice;
             }
             int vozrX = 1;
-            int ubyvX = 5;
-            for(int i = 0; i < objCPU.GetCountCPUs(); i++)
+            int ubyvX = steps;
+            for(int i = 0; i < 13; i++)
             {
-                for(int j = 0; j < steps-1; j++)
+                vozrX = 1;
+                ubyvX = steps;
+                for (int j = 0; j < steps; j++)
                 {
-                    vozrX = 1;
-                    ubyvX = 5;
-                    if (objCPU.cpuList.ElementAt(i).Value.countCores_CPU>=stepsCores[j] &&
-                        objCPU.cpuList.ElementAt(i).Value.countCores_CPU < stepsCores[j + 1])
+                    if (objCPU.cpuList.ElementAt(i).Value.countCores_CPU>stepsCores[j] &&
+                        objCPU.cpuList.ElementAt(i).Value.countCores_CPU <= stepsCores[j + 1])
                     {
                         objCPU.cpuList.ElementAt(i).Value.countCores_CPU = vozrX;
                     }
-                    if(objCPU.cpuList.ElementAt(i).Value.frequency_CPU >= stepsTakt[j] &&
-                        objCPU.cpuList.ElementAt(i).Value.frequency_CPU < stepsTakt[j + 1])
+                    if(objCPU.cpuList.ElementAt(i).Value.frequency_CPU > stepsTakt[j] &&
+                        objCPU.cpuList.ElementAt(i).Value.frequency_CPU <= stepsTakt[j + 1])
                     {
                         objCPU.cpuList.ElementAt(i).Value.frequency_CPU = vozrX;
                     }
-                    if (objCPU.cpuList.ElementAt(i).Value.price_CPU>= stepsPrice[j] &&
-                        objCPU.cpuList.ElementAt(i).Value.price_CPU < stepsPrice[j + 1])
+                    if (objCPU.cpuList.ElementAt(i).Value.price_CPU> stepsPrice[j] &&
+                        objCPU.cpuList.ElementAt(i).Value.price_CPU <= stepsPrice[j + 1])
                     {
                         objCPU.cpuList.ElementAt(i).Value.price_CPU = ubyvX;
                     }

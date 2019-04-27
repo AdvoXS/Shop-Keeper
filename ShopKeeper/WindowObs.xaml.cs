@@ -19,6 +19,7 @@ namespace ShopKeeper
     /// </summary>
     public partial class WindowObs : Window
     {
+        obsCalcClass calc;
         public WindowObs()
         {
             InitializeComponent();
@@ -26,7 +27,13 @@ namespace ShopKeeper
 
         private void PreviousButton_Copy_Click(object sender, RoutedEventArgs e)
         {
-            if()
+            if (coresTextBox.Text != "" && taktTextBox.Text != "" && priceTextBox.Text!="")
+            {
+                calc = new obsCalcClass(float.Parse(coresTextBox.Text), float.Parse(taktTextBox.Text), float.Parse(priceTextBox.Text));
+                WindowShowProduct shower = new WindowShowProduct(calc.indexFounded,this);
+                Hide();
+                shower.Show();
+            }
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)

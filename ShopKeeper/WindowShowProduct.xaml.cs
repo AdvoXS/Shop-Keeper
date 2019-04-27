@@ -32,6 +32,7 @@ namespace ShopKeeper
         }
         private void showProduct()
         {
+            win.Title = cpu.cpuList.ElementAt(index).Key;
             string intVideo, intSo;
             if (cpu.cpuList.ElementAt(index).Value.integratedVideo_CPU)
             {

@@ -173,6 +173,7 @@ namespace ShopKeeper
             obsImage.Cursor = Cursors.Hand;
             obsImage.MouseEnter += obsImage_MouseOn;
             obsImage.MouseLeave += obsImage_MouseOut;
+            obsImage.MouseUp += obsImage_Click;
             obsImage.Source = new BitmapImage(new Uri("helpersImages/obs1.png", UriKind.Relative));
             mainCanvas.Children.Add(obsImage);
 
@@ -389,6 +390,13 @@ namespace ShopKeeper
             obsName.Opacity = 100;
             obsName.Visibility = Visibility.Visible;
             obsDescription.Visibility = Visibility.Hidden;
+        }
+        private void obsImage_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            this.IsEnabled = false;
+            WindowObs windowLow = new WindowObs();
+            windowLow.Show();
         }
     }
 }

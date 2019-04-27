@@ -25,7 +25,7 @@
         <Label x:Name="priceDo" Content="До" HorizontalAlignment="Left" Margin="196,349,0,0" VerticalAlignment="Top" Width="25" Foreground="White"/>
         <Button x:Name="PreviousButton_Copy" Content="Продолжить" HorizontalAlignment="Left" Margin="346,432,0,0" VerticalAlignment="Top" Width="113" Height="31" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="16" FontWeight="Bold" Foreground="#FFF5E9E9" Click="PreviousButton_Copy_Click" IsEnabled="False"/>
         <Label Content="Субоптимизация" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="191" FontFamily="Segoe UI Black" FontSize="20" Foreground="White"/>
-        <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="139,402,0,0" VerticalAlignment="Top" Width="168" Height="63" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12" MouseUp="FoundedLabel_MouseUp"/>
+        <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="130,389,0,0" VerticalAlignment="Top" Width="191" Height="76" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12" MouseUp="FoundedLabel_MouseUp"/>
         <ComboBox x:Name="mainKriteriiBox" HorizontalAlignment="Left" Margin="72,92,0,0" VerticalAlignment="Top" Width="176" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Cursor="Hand" Content="Количество ядер"/>
             <ComboBoxItem Cursor="Hand" Content="Тактовая частота"/>

@@ -50,7 +50,7 @@ namespace ShopKeeper
             if (Convert.ToString(cmb.Content) == "Тактовая частота")
             {
                 calc = new SubOptimCalcClass(Convert.ToString(cmb.Content), int.Parse(coresTextBox1.Text),
-                    int.Parse(coresTextBox2.Text), int.Parse(taktTextBox1.Text), int.Parse(taktTextBox2.Text));
+                    int.Parse(coresTextBox2.Text), int.Parse(priceTextBox1.Text), int.Parse(priceTextBox2.Text));
             }
             if (Convert.ToString(cmb.Content) == "Цена")
             {
@@ -59,9 +59,24 @@ namespace ShopKeeper
             }
             if (calc.oneCPU)
             {
+                foundedLabel.Content = "Найден подходящий товар, \nчтобы увидеть его - \nнажмите кнопку продолжить, \nповторно!";
+                foundedLabel.Background = Brushes.Green;
+                foundedLabel.Opacity = 100;
                 WindowShowProduct shower = new WindowShowProduct(calc.foundedIndexCpus[0], this);
                 shower.Show();
                 Hide();
+            }
+            else if(calc.countFounded>1)
+            {
+                foundedLabel.Content = "Найдено несколько(" + calc.countFounded + ") \nсоответствующих критериям \nтоваров. \nCузьте границы!";
+                foundedLabel.Background = Brushes.Orange;
+                foundedLabel.Opacity = 100;
+            }
+            else if (calc.countFounded == 0)
+            {
+                foundedLabel.Opacity = 100;
+                foundedLabel.Content = "Не найдено подходящих \nтоваров. \nРасширьте границы!";
+                foundedLabel.Background = Brushes.OrangeRed;
             }
         }
 

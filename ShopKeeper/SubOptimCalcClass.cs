@@ -12,115 +12,114 @@ namespace ShopKeeper
         public int countFounded, indexFounded;
         public List<int> foundedIndexCpus;
         public bool oneCPU;
+
         public SubOptimCalcClass(string mainKriterii, int minKrit1, int maxKrit1, int minKrit2, int maxKrit2)
         {
+            List<int> newArr = new List<int>();
             foundedIndexCpus = new List<int>();
+            newArr.Add(0);
             cpu = new CPU();
-            foundedIndexCpus.Add(0);
+            calcBorder(mainKriterii, minKrit1, maxKrit1, minKrit2, maxKrit2);
             oneCPU = false;
             if (mainKriterii == "Количество ядер")
             {
                 int max = int.MinValue;
-                for (int i = 0; i < cpu.GetCountCPUs(); i++)
+                for (int i = 0; i < foundedIndexCpus.Count; i++)
                 {
-                    if (cpu.cpuList.ElementAt(i).Value.countCores_CPU > max)
+                    if (cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.countCores_CPU > max)
                     {
-                        max = cpu.cpuList.ElementAt(i).Value.countCores_CPU;
+                        max = cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.countCores_CPU;
                         countFounded = 1;
-                        indexFounded = i;
+                        indexFounded = foundedIndexCpus[i];
                         if (foundedIndexCpus.Count != 0)
                         {
-                            foundedIndexCpus.Clear();
-                            foundedIndexCpus.Add(0);
+                            newArr.Clear();
+                            newArr.Add(0);
                         }
-                        foundedIndexCpus[0] = i;
+                        newArr[0] = foundedIndexCpus[i];
                     }
-                    else if (cpu.cpuList.ElementAt(i).Value.countCores_CPU == max)
+                    else if (cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.countCores_CPU == max)
                     {
                         countFounded++;
-                        foundedIndexCpus.Add(i);
+                        newArr.Add(foundedIndexCpus[i]);
                     }
                 }
             }
             else if (mainKriterii == "Тактовая частота")
             {
                 int max = int.MinValue;
-                for (int i = 0; i < cpu.GetCountCPUs(); i++)
+                for (int i = 0; i < foundedIndexCpus.Count; i++)
                 {
-                    if (cpu.cpuList.ElementAt(i).Value.frequency_CPU> max)
+                    if (cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.frequency_CPU> max)
                     {
-                        max = cpu.cpuList.ElementAt(i).Value.frequency_CPU;
+                        max = cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.frequency_CPU;
                         countFounded = 1;
-                        indexFounded = i;
-                        if (foundedIndexCpus.Count != 0)
+                        indexFounded = foundedIndexCpus[i];
+                        if (newArr.Count != 0)
                         {
-                            foundedIndexCpus.Clear();
-                            foundedIndexCpus.Add(0);
+                            newArr.Clear();
+                            newArr.Add(0);
                         }
-                        foundedIndexCpus[0] = i;
+                        newArr[0] = foundedIndexCpus[i];
                     }
-                    else if (cpu.cpuList.ElementAt(i).Value.frequency_CPU == max)
+                    else if (cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.frequency_CPU == max)
                     {
                         countFounded++;
-                        foundedIndexCpus.Add(i);
+                        newArr.Add(foundedIndexCpus[i]);
                     }
                 }
             }
             else if (mainKriterii == "Цена")
             {
                 int max = int.MaxValue;
-                for (int i = 0; i < cpu.GetCountCPUs(); i++)
+                for (int i = 0; i < foundedIndexCpus.Count; i++)
                 {
-                    if (cpu.cpuList.ElementAt(i).Value.price_CPU < max)
+                    if (cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.price_CPU < max)
                     {
-                        max = cpu.cpuList.ElementAt(i).Value.price_CPU;
+                        max = cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.price_CPU;
                         countFounded = 1;
-                        indexFounded = i;
-                        if (foundedIndexCpus.Count != 0)
+                        indexFounded = foundedIndexCpus[i];
+                        if (newArr.Count != 0)
                         {
-                            foundedIndexCpus.Clear();
-                            foundedIndexCpus.Add(0);
+                            newArr.Clear();
+                            newArr.Add(0);
                         }
-                        foundedIndexCpus[0] = i;
+                        newArr[0] = foundedIndexCpus[i];
                     }
-                    else if (cpu.cpuList.ElementAt(i).Value.price_CPU == max)
+                    else if (cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.price_CPU == max)
                     {
                         countFounded++;
-                        foundedIndexCpus.Add(i);
+                        newArr.Add(foundedIndexCpus[i]);
                     }
                 }
             }
 
             if (countFounded > 1)
             {
-                calcBorder(mainKriterii, minKrit1, maxKrit1, minKrit2, maxKrit2);
+                oneCPU = false;
             }
-            else if (countFounded == 1) oneCPU = true;
+            else if (countFounded == 1)
+            {
+                foundedIndexCpus = newArr;
+                oneCPU = true;
+            }
         }
         private void calcBorder(string main, int min1,int max1,int min2, int max2)
         {
             int nowCPUs = 0;
-            List<int> newArr = new List<int>();
-            for (int i = 0; i < foundedIndexCpus.Count; i++)
+           
+            for (int i = 0; i < cpu.GetCountCPUs(); i++)
             {
-                if (main == "Количество ядер" && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.frequency_CPU >= min1 && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.frequency_CPU <= max1
-                        && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.price_CPU >= min2 && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.price_CPU <= max2)
-                {newArr.Add(foundedIndexCpus[i]); nowCPUs++; }
+                if (main == "Количество ядер" && cpu.cpuList.ElementAt(i).Value.frequency_CPU >= min1 && cpu.cpuList.ElementAt(i).Value.frequency_CPU <= max1
+                        && cpu.cpuList.ElementAt(i).Value.price_CPU >= min2 && cpu.cpuList.ElementAt(i).Value.price_CPU <= max2)
+                {foundedIndexCpus.Add(i); nowCPUs++; }
 
-                else if (main == "Тактовая частота" && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.countCores_CPU >= min1 && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.countCores_CPU <= max1
-                        && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.price_CPU >= min2 && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.price_CPU <= max2)
-                { newArr.Add(foundedIndexCpus[i]); nowCPUs++; }
-                else if (main == "Цена" && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.countCores_CPU>= min1 && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.countCores_CPU<= max1
-                        && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.frequency_CPU >= min2 && cpu.cpuList.ElementAt(foundedIndexCpus[i]).Value.frequency_CPU <= max2)
-                { newArr.Add(foundedIndexCpus[i]); nowCPUs++; }
-
-
-            }
-            if (nowCPUs > 1) oneCPU = false;
-            else if (nowCPUs == 1)
-            {
-                foundedIndexCpus = newArr;
-                oneCPU = true;
+                else if (main == "Тактовая частота" && cpu.cpuList.ElementAt(i).Value.countCores_CPU >= min1 && cpu.cpuList.ElementAt(i).Value.countCores_CPU <= max1
+                        && cpu.cpuList.ElementAt(i).Value.price_CPU >= min2 && cpu.cpuList.ElementAt(i).Value.price_CPU <= max2)
+                { foundedIndexCpus.Add(i); nowCPUs++; }
+                else if (main == "Цена" && cpu.cpuList.ElementAt(i).Value.countCores_CPU>= min1 && cpu.cpuList.ElementAt(i).Value.countCores_CPU<= max1
+                        && cpu.cpuList.ElementAt(i).Value.frequency_CPU >= min2 && cpu.cpuList.ElementAt(i).Value.frequency_CPU <= max2)
+                { foundedIndexCpus.Add(i); nowCPUs++; }
             }
         }
     }

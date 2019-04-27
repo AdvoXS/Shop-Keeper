@@ -73,7 +73,7 @@ namespace ShopKeeper
             cpuList.Add("AMD Ryzen 3 2300X OEM", new CPU("Game", "AM4",3500,4,6999,false,false));
             cpuToImageCPU.Add("AMD Ryzen 3 2300X OEM", "Pictures_CPU/AMD_RYZEN_2300X.jpg");
             //10
-            cpuList.Add("Intel Core i3-8100 OEM", new CPU("Office", "LGA 1511", 3600,4,8799,true,false));
+            cpuList.Add("Intel Core i3-8100 OEM", new CPU("Office", "LGA 1511", 3500,4,8799,true,false));
             cpuToImageCPU.Add("Intel Core i3-8100 OEM", "Pictures_CPU/AMD_RYZEN_2300X.jpg");
             //11
             cpuList.Add("Intel Xeon E3-1230 v6 OEM", new CPU("Server", "LGA 1155",3000,4,16499,false,false));

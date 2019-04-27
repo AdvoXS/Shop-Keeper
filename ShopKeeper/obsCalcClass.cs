@@ -15,6 +15,7 @@ namespace ShopKeeper
         {
             objCPU = new CPU();
             normCPUS();
+            calc(coresWeight,taktWeight,priceWeight);
         }
         private void normCPUS()
         {
@@ -72,20 +73,20 @@ namespace ShopKeeper
                 }
             }
         }
-        private void calc()
+        private void calc(float cor,float takt,float prices)
         {
-            int max = int.MinValue;
+            float max = int.MinValue;
             indexFounded= 0;
             weightsCPU = new int[objCPU.GetCountCPUs()];
             for(int i = 0; i < weightsCPU.Length; i++)
             {
-                if( (objCPU.cpuList.ElementAt(i).Value.countCores_CPU +
-                    objCPU.cpuList.ElementAt(i).Value.frequency_CPU +
-                    objCPU.cpuList.ElementAt(i).Value.price_CPU) > max)
+                if( (objCPU.cpuList.ElementAt(i).Value.countCores_CPU*cor +
+                    objCPU.cpuList.ElementAt(i).Value.frequency_CPU*takt +
+                    objCPU.cpuList.ElementAt(i).Value.price_CPU*prices) > max)
                 {
-                    max = objCPU.cpuList.ElementAt(i).Value.countCores_CPU +
-                    objCPU.cpuList.ElementAt(i).Value.frequency_CPU +
-                    objCPU.cpuList.ElementAt(i).Value.price_CPU;
+                    max = objCPU.cpuList.ElementAt(i).Value.countCores_CPU*cor +
+                    objCPU.cpuList.ElementAt(i).Value.frequency_CPU*takt +
+                    objCPU.cpuList.ElementAt(i).Value.price_CPU*prices;
                     indexFounded = i;
                 }
             }

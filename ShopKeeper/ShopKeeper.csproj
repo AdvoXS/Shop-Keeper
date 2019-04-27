@@ -64,6 +64,9 @@
     <Compile Include="WindowLowBorders.xaml.cs">
       <DependentUpon>WindowLowBorders.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowObs.xaml.cs">
+      <DependentUpon>WindowObs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowShowProduct.xaml.cs">
       <DependentUpon>WindowShowProduct.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowLowBorders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowObs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

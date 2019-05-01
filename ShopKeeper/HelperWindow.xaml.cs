@@ -42,6 +42,10 @@ namespace ShopKeeper
 
             isShowAll = false;
 
+            coresInfoLabel.Content =  "Оно представляет собой часть процессора,\nспособное выполнять один поток команд.\nЧем больше ядер," +
+                "тем больше операций\nможно выполнять одновременно.";
+            frenqInfoLabel.Content = "Значение этой характеристики отражает производительность\nCPU" +
+                " в количестве операций в секунду.\nЧем больше тактовая частота,тем быстрее\nкомпьютер выполняет операции";
 
             okrezhim = true;
             selectWindowLabelSelect = new Label();
@@ -217,7 +221,6 @@ namespace ShopKeeper
             da.To = this.Opacity+25;
             da.Duration = TimeSpan.FromSeconds(5);
             welcomeLabel.BeginAnimation(Label.OpacityProperty, da);
-            startLabel1.BeginAnimation(Label.OpacityProperty, da);
             initButtonStartAnimation();
         }
         public void initButtonStartAnimation()
@@ -234,13 +237,39 @@ namespace ShopKeeper
             ThicknessAnimation da = new ThicknessAnimation();
             ThicknessAnimation da1 = new ThicknessAnimation();
             da.From = welcomeLabel.Margin;
-            da.To =  new Thickness(welcomeLabel.Margin.Left+1250, welcomeLabel.Margin.Top, 0, 0);
+            da.To =  new Thickness(welcomeLabel.Margin.Left+ 1950, welcomeLabel.Margin.Top, 0, 0);
             da.Duration = TimeSpan.FromSeconds(1);
-            da1.From = startLabel1.Margin;
-            da1.To = new Thickness(startLabel1.Margin.Left + 1250, startLabel1.Margin.Top, 0, 0);
-            da1.Duration = TimeSpan.FromSeconds(1);
             welcomeLabel.BeginAnimation(Label.MarginProperty, da);
-            startLabel1.BeginAnimation(Label.MarginProperty, da1);
+
+            startImage1.Opacity = 0;
+            startImage2.Opacity = 0;
+            //da.From = startImage1.Margin;
+            //da.To = new Thickness(startImage1.Margin.Left + 1550, startImage1.Margin.Top, 0, 0);
+            //startImage1.BeginAnimation(Image.MarginProperty, da);
+
+            //da.From = startImage2.Margin;
+            //da.To = new Thickness(startImage2.Margin.Left + 1550, startImage2.Margin.Top, 0, 0);
+            //startImage2.BeginAnimation(Image.MarginProperty, da);
+
+            da.From = welcomeLabel_Copy.Margin;
+            da.To = new Thickness(welcomeLabel_Copy.Margin.Left + 1950, welcomeLabel_Copy.Margin.Top, 0, 0);
+            welcomeLabel_Copy.BeginAnimation(Label.MarginProperty, da);
+
+            da.From = coresInfoLabel.Margin;
+            da.To = new Thickness(coresInfoLabel.Margin.Left + 1950, coresInfoLabel.Margin.Top, 0, 0);
+            coresInfoLabel.BeginAnimation(Label.MarginProperty, da);
+
+            da.From = frenqInfoLabel.Margin;
+            da.To = new Thickness(frenqInfoLabel.Margin.Left + 1950, frenqInfoLabel.Margin.Top, 0, 0);
+            frenqInfoLabel.BeginAnimation(Label.MarginProperty, da);
+
+            da.From = startLabel1.Margin;
+            da.To = new Thickness(startLabel1.Margin.Left + 1950, startLabel1.Margin.Top, 0, 0);
+            startLabel1.BeginAnimation(Label.MarginProperty, da);
+
+            da.From = startLabel2.Margin;
+            da.To = new Thickness(startLabel2.Margin.Left + 1950, startLabel2.Margin.Top, 0, 0);
+            startLabel2.BeginAnimation(Label.MarginProperty, da);
 
             ThicknessAnimation da2 = new ThicknessAnimation();
             da2.From = buttonNext.Margin;
@@ -291,7 +320,6 @@ namespace ShopKeeper
             startWindowsNexted();
             showerCpusLabel.Visibility = Visibility.Visible;
             welcomeLabel.IsEnabled = false;
-            startLabel1.IsEnabled = false;
             mainCanvas.IsEnabled = true;
             rezhim.Opacity = 100;
             selectWindowStartAnimation();

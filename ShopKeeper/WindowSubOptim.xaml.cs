@@ -100,9 +100,10 @@ namespace ShopKeeper
                         taktTextBox2.IsEnabled = true;
                         coresTextBox1.IsEnabled = false;
                         coresCheck.IsEnabled = false;
-
+                        
                         coresCheck_Copy.IsEnabled = true;
-
+                        coresCheck_Copy.IsChecked = true;
+                        coresCheck_Copy1.IsChecked = true;
                         coresCheck_Copy1.IsEnabled = true;
                         coresTextBox1.Text = "1";
                         coresTextBox2.Text = "32";
@@ -123,6 +124,8 @@ namespace ShopKeeper
                         coresCheck_Copy.IsEnabled = false;
 
                         coresCheck_Copy1.IsEnabled = true;
+                        coresCheck_Copy1.IsChecked = true;
+                        coresCheck.IsChecked = true;
                         coresCheck.IsEnabled = true;
                         taktTextBox1.Text = "0";
                         taktTextBox2.Text = "4000";
@@ -142,6 +145,8 @@ namespace ShopKeeper
                         priceTextBox2.Text = "30000";
                         coresCheck_Copy1.IsEnabled = false;
                         coresCheck.IsEnabled = true;
+                        coresCheck.IsChecked = true;
+                        coresCheck_Copy.IsChecked = true;
                         coresCheck_Copy.IsEnabled = true;
                         coresMainNowLabel.Opacity = 0;
                         taktMainNowLabel.Opacity = 0;

@@ -24,7 +24,7 @@ namespace ShopKeeper
             float minCores = 1;
             float maxCores = 16;
             float minTakt = 1446;
-            float maxTakt = 3806;
+            float maxTakt = 3856;
             float minPrice = 1597;
             float maxPrice = 26301;
 

@@ -99,6 +99,11 @@ namespace ShopKeeper
                         taktTextBox1.IsEnabled = true;
                         taktTextBox2.IsEnabled = true;
                         coresTextBox1.IsEnabled = false;
+                        coresCheck.IsEnabled = false;
+
+                        coresCheck_Copy.IsEnabled = true;
+
+                        coresCheck_Copy1.IsEnabled = true;
                         coresTextBox1.Text = "1";
                         coresTextBox2.Text = "32";
                         coresTextBox2.IsEnabled = false;
@@ -115,6 +120,10 @@ namespace ShopKeeper
                         coresTextBox2.IsEnabled = true;
                         taktTextBox1.IsEnabled = false;
                         taktTextBox2.IsEnabled = false;
+                        coresCheck_Copy.IsEnabled = false;
+
+                        coresCheck_Copy1.IsEnabled = true;
+                        coresCheck.IsEnabled = true;
                         taktTextBox1.Text = "0";
                         taktTextBox2.Text = "4000";
                         priceTextBox1.IsEnabled = true;
@@ -131,6 +140,9 @@ namespace ShopKeeper
                         priceTextBox2.IsEnabled = false;
                         priceTextBox1.Text = "0";
                         priceTextBox2.Text = "30000";
+                        coresCheck_Copy1.IsEnabled = false;
+                        coresCheck.IsEnabled = true;
+                        coresCheck_Copy.IsEnabled = true;
                         coresMainNowLabel.Opacity = 0;
                         taktMainNowLabel.Opacity = 0;
                         priceNowMainLabel.Opacity = 100;
@@ -142,6 +154,54 @@ namespace ShopKeeper
 
                         break;
                 }
+            }
+        }
+
+        private void CoresCheck_Click(object sender, RoutedEventArgs e)
+        {
+            if((bool)coresCheck.IsChecked)
+            {
+                coresTextBox1.IsEnabled = true;
+                coresTextBox2.IsEnabled = true;
+            }
+            else if ((bool)!coresCheck.IsChecked)
+            {
+                coresTextBox1.IsEnabled = false;
+                coresTextBox2.IsEnabled = false;
+                coresTextBox1.Text = "1";
+                coresTextBox2.Text = "32";
+            }
+        }
+
+        private void CoresCheck_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)coresCheck_Copy.IsChecked)
+            {
+                taktTextBox1.IsEnabled = true;
+                taktTextBox2.IsEnabled = true;
+            }
+            else if ((bool)!coresCheck_Copy.IsChecked)
+            {
+                taktTextBox1.IsEnabled = false;
+                taktTextBox2.IsEnabled = false;
+                taktTextBox1.Text = "0";
+                taktTextBox2.Text = "4000";
+            }
+        }
+
+        private void CoresCheck_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)coresCheck_Copy1.IsChecked)
+            {
+                priceTextBox1.IsEnabled = true;
+                priceTextBox2.IsEnabled = true;
+            }
+            else if ((bool)!coresCheck_Copy1.IsChecked)
+            {
+                priceTextBox1.IsEnabled = false;
+                priceTextBox2.IsEnabled = false;
+                priceTextBox1.Text = "0";
+                priceTextBox2.Text = "30000";
             }
         }
     }

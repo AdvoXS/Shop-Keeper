@@ -10,16 +10,16 @@
         <TextBox x:Name="coresTextBox1" HorizontalAlignment="Left" Height="23" Margin="75,110,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="coresTextBox2" HorizontalAlignment="Left" Height="23" Margin="234,110,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
         <Button x:Name="PreviousButton" Content="Назад" HorizontalAlignment="Left" Margin="10,391,0,0" VerticalAlignment="Top" Width="72" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click"/>
-        <Label Content="Количество ядер" HorizontalAlignment="Left" Margin="44,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="130" FontSize="14" Foreground="White"/>
+        <Label Content="Количество ядер" HorizontalAlignment="Left" Margin="75,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="130" FontSize="14" Foreground="White"/>
         <Label Content="От" HorizontalAlignment="Left" Margin="44,110,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <Label Content="До" HorizontalAlignment="Left" Margin="203,110,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <TextBox x:Name="frenqTextBox1" HorizontalAlignment="Left" Height="23" Margin="75,190,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="frenqTextBox2" HorizontalAlignment="Left" Height="23" Margin="234,190,0,0" TextWrapping="Wrap" Text="4000" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True" Foreground="Black"/>
-        <Label Content="Тактовая частота" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="130" FontSize="14" Foreground="White"/>
+        <Label Content="Тактовая частота" HorizontalAlignment="Left" Margin="75,156,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="130" FontSize="14" Foreground="White"/>
         <Label Content="От" HorizontalAlignment="Left" Margin="44,190,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <TextBox x:Name="priceTextBox1" HorizontalAlignment="Left" Height="23" Margin="75,265,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="priceTextBox2" HorizontalAlignment="Left" Height="23" Margin="234,265,0,0" TextWrapping="Wrap" Text="30000" VerticalAlignment="Top" Width="120" SpellCheck.IsEnabled="True"/>
-        <Label Content="Цена" HorizontalAlignment="Left" Margin="44,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="47" FontSize="14" Foreground="White"/>
+        <Label Content="Цена" HorizontalAlignment="Left" Margin="75,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="47" FontSize="14" Foreground="White"/>
         <Label Content="От" HorizontalAlignment="Left" Margin="44,265,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <Label Content="До" HorizontalAlignment="Left" Margin="203,189,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
         <Label Content="До" HorizontalAlignment="Left" Margin="203,265,0,0" VerticalAlignment="Top" Width="26" Foreground="White"/>
@@ -28,6 +28,9 @@
         <CheckBox x:Name="checkSO" Content="Наличие системы охлаждения" HorizontalAlignment="Left" Margin="51,305,0,0" VerticalAlignment="Top" Width="178" Foreground="White"/>
         <CheckBox x:Name="checkVideo" Content="Наличие интегрированного видеоядра" HorizontalAlignment="Left" Margin="51,331,0,0" VerticalAlignment="Top" Width="221" Foreground="White"/>
         <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="293,300,0,0" VerticalAlignment="Top" Width="182" Height="73" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12" MouseUp="FoundedLabel_MouseUp"/>
+        <CheckBox x:Name="CoresCheck" Content="" HorizontalAlignment="Left" Margin="61,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.335,1.518" Width="16" Height="16" Click="CoresCheck_Click" IsChecked="True"/>
+        <CheckBox x:Name="CoresCheck_Copy" Content="" HorizontalAlignment="Left" Margin="61,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.335,1.518" Width="16" Height="16" IsChecked="True" Click="CoresCheck_Copy_Click"/>
+        <CheckBox x:Name="CoresCheck_Copy1" Content="" HorizontalAlignment="Left" Margin="61,240,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.335,1.518" Width="16" Height="16" IsChecked="True" Click="CoresCheck_Copy1_Click"/>
 
     </Grid>
 </Window>

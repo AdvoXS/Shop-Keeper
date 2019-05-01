@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopKeeper"
         mc:Ignorable="d"
-        Title="Помощник" Height="320.038" Width="924.613" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" ResizeMode="NoResize">
+        Title="Помощник" Height="320.038" Width="924.613" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" ResizeMode="NoResize" Closed="Helps_Closed">
     <Grid>
         <Label x:Name="welcomeLabel" Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="334,42,0,0" VerticalAlignment="Top" Width="297" Height="67" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" FontSize="24" FontWeight="Bold" Opacity="0" Initialized="Label_Initialized">
 
@@ -14,6 +14,7 @@
         <Button x:Name="buttonNext" Content="Далее" HorizontalAlignment="Left" Margin="740,236,0,0" VerticalAlignment="Top" Width="147" Height="41" Background="#FF89BEF1" FontSize="18" BorderBrush="#FF55B6F1" FontFamily="Source Sans Pro Semibold" Foreground="White" FontWeight="Bold" Opacity="0" Click="ButtonNext_Click"/>
         <Canvas x:Name="mainCanvas" HorizontalAlignment="Left" Height="292" VerticalAlignment="Top" Width="919" IsEnabled="False" Margin="0,0,0,-0.377">
             <Label x:Name="rezhim" Content="Обычный режим" Canvas.Left="765" Canvas.Top="10" RenderTransformOrigin="0.733,0.442" Width="144" Cursor="Hand" FontSize="10" Foreground="#FFCECECE" MouseUp="Label_MouseUp" Opacity="0" Visibility="Hidden"/>
+            <Label x:Name="showerCpusLabel" Content="Показать все товары" Canvas.Left="746" Canvas.Top="10" Width="143" Foreground="#FFF8D5D5" FontStyle="Italic" Cursor="Hand" MouseUp="Label_MouseUp_1" Visibility="Hidden"/>
         </Canvas>
 
     </Grid>

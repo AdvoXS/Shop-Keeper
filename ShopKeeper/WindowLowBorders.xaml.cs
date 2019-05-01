@@ -80,5 +80,53 @@ namespace ShopKeeper
         {
             foundedLabel.Opacity = 0;
         }
+
+        private void CoresCheck_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)CoresCheck.IsChecked)
+            {
+                coresTextBox1.IsEnabled = true;
+                coresTextBox2.IsEnabled = true;
+            }
+            else if ((bool)!CoresCheck.IsChecked)
+            {
+                coresTextBox1.IsEnabled = false;
+                coresTextBox2.IsEnabled = false;
+                coresTextBox1.Text = "1";
+                coresTextBox2.Text = "32";
+            }
+        }
+
+        private void CoresCheck_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)CoresCheck_Copy.IsChecked)
+            {
+                frenqTextBox1.IsEnabled = true;
+                frenqTextBox2.IsEnabled = true;
+            }
+            else if ((bool)!CoresCheck_Copy.IsChecked)
+            {
+                frenqTextBox1.IsEnabled = false;
+                frenqTextBox2.IsEnabled = false;
+                frenqTextBox1.Text = "0";
+                frenqTextBox2.Text = "4000";
+            }
+        }
+
+        private void CoresCheck_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)CoresCheck_Copy1.IsChecked)
+            {
+                priceTextBox1.IsEnabled = true;
+                priceTextBox2.IsEnabled = true;
+            }
+            else if ((bool)!CoresCheck_Copy1.IsChecked)
+            {
+                priceTextBox1.IsEnabled = false;
+                priceTextBox2.IsEnabled = false;
+                priceTextBox1.Text = "0";
+                priceTextBox2.Text = "30000";
+            }
+        }
     }
 }

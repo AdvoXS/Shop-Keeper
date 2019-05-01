@@ -28,15 +28,21 @@ namespace ShopKeeper
         Label subOptimisationDescription, subOptimisationName;
         Label obsName, obsDescription;
 
-        public HelperWindow()
+        Window parentForm;
+        public HelperWindow(Window parentWindow)
         {
             InitializeComponent();
+            parentForm = parentWindow;
             initElements();
             initLabelStartAnimation();
         }
 
         private void initElements()
         {//инициализация элементов управления
+
+            isShowAll = false;
+
+
             okrezhim = true;
             selectWindowLabelSelect = new Label();
             selectWindowLabelSelect.Margin = new Thickness(this.Width / 3.5, this.Height / 36, 0, 0);
@@ -283,6 +289,7 @@ namespace ShopKeeper
         private void ButtonNext_Click(object sender, RoutedEventArgs e)
         {
             startWindowsNexted();
+            showerCpusLabel.Visibility = Visibility.Visible;
             welcomeLabel.IsEnabled = false;
             startLabel1.IsEnabled = false;
             mainCanvas.IsEnabled = true;
@@ -369,6 +376,37 @@ namespace ShopKeeper
             WindowLeksi windowLow = new WindowLeksi(this);
             windowLow.Show();
         }
+        bool isShowAll;
+        private void Label_MouseUp_1(object sender, MouseButtonEventArgs e)
+        {
+            if (!isShowAll)
+            {
+                if (parentForm != null)
+                {
+                    parentForm.Show();
+                }
+                else
+                {
+                    MainWindow win = new MainWindow();
+                    win.Show_Cpus();
+                    win.Show();
+                }
+                isShowAll = true;
+                showerCpusLabel.Content = "Скрыть все продукты";
+            }
+            else
+            {
+                parentForm.Hide();
+                isShowAll = false;
+                showerCpusLabel.Content = "Показать все продукты";
+            }
+        }
+
+        private void Helps_Closed(object sender, EventArgs e)
+        {
+            if (parentForm != null) parentForm.Close();
+        }
+
         private void subOptimImage_Click(object sender, RoutedEventArgs e)
         {
             Hide();

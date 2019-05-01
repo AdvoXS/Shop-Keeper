@@ -64,14 +64,20 @@ namespace ShopKeeper
             clearViewCPUs();
             Show_Cpus();
         }
+        private void deleteStartScreen()
+        {
+            imageCPU.Visibility = Visibility.Hidden;
+            labelQuestion1.Visibility = Visibility.Hidden;
+            labelCPU.Visibility = Visibility.Hidden;
+        }
         public void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Show_Cpus();
             //showHelper();
             //panelHelp.IsEnabled = true;
-            HelperWindow helperWindow = new HelperWindow();
+            HelperWindow helperWindow = new HelperWindow(this);
             helperWindow.Show();
-            //this.Close();
+            this.Hide();
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -198,8 +204,9 @@ namespace ShopKeeper
         {
             clearHelpMenu();
         }
-        private void Show_Cpus()
+        public void Show_Cpus()
         {
+            deleteStartScreen();
             scrViewerCPUs.IsEnabled = true;
             scrViewerCPUs.Visibility = Visibility.Visible;
             panel.IsEnabled = true;

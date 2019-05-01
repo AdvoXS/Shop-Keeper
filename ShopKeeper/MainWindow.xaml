@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopKeeper"
         mc:Ignorable="d"
-        Title="Shop Keeper" Height="354.864" Width="552.251" SizeChanged="MainWindow_SizeChanged" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="White">
+        Title="Shop Keeper" Height="354.864" Width="552.251" SizeChanged="MainWindow_SizeChanged" WindowStartupLocation="Manual" Background="White" WindowStyle="None">
     <Grid>
         <Label x:Name="labelQuestion1" Content="Выберите что хотите приобрести" HorizontalAlignment="Left" Margin="137,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="325" FontSize="20" Foreground="#FF490000">
 

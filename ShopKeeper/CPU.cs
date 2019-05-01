@@ -79,7 +79,7 @@ namespace ShopKeeper
             cpuList.Add("Intel Xeon E3-1230 v6 OEM", new CPU("Server", "LGA 1155",3000,4,16499,false,false));
             cpuToImageCPU.Add("Intel Xeon E3-1230 v6 OEM", "Pictures_CPU/INTEL_XEON_E3_1230.jpg");
             //12
-            cpuList.Add("Intel Xeon E3-1245 v6 OEM", new CPU("Server", "LGA 1155",3500,8,26299,true,false));
+            cpuList.Add("Intel Xeon E3-1245 v6 OEM", new CPU("Server", "LGA 1155",3850,8,26299,true,false));
             cpuToImageCPU.Add("Intel Xeon E3-1245 v6 OEM", "Pictures_CPU/INTEL_XEON_E3_1245.jpg");
             //13
             cpuList.Add("AMD Ryzen Threadripper 1900X BOX", new CPU("Server", "sTR4",3800,16,22499,false,true));

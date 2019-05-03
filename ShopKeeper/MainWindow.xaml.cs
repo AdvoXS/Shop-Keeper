@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Threading;
 namespace ShopKeeper
 {
     /// <summary>
@@ -18,8 +19,9 @@ namespace ShopKeeper
         public MainWindow()
         {
             InitializeComponent();
-            //init_Elements();
-            
+            //Thread.Sleep(2);
+           
+
         }
         private void init_Elements()
         {
@@ -489,6 +491,23 @@ namespace ShopKeeper
 
             }
 
+        }
+
+        private void MainWindow_Initialized(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void MainWindow_Activated(object sender, EventArgs e)
+        {
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Show_Cpus();
+            HelperWindow helperWindow = new HelperWindow(this);
+            helperWindow.Show();
+            Hide();
         }
     }
 }

@@ -47,12 +47,9 @@ namespace ShopKeeper
             if(coresTextBox1.Text!="" && coresTextBox2.Text!=""&& frenqTextBox1.Text!="" 
                 && frenqTextBox2.Text != "" && priceTextBox1.Text!="" && priceTextBox2.Text!="")
             {
-                bool isChBox1 = true, isChBox2;
-                isChBox1 = (bool)checkSO.IsChecked ? true : false;
-                isChBox2 = (bool)checkVideo.IsChecked ? true : false;
                 lowBorderCalc calc = new lowBorderCalc(int.Parse(coresTextBox1.Text), int.Parse(coresTextBox2.Text),
                     int.Parse(frenqTextBox1.Text), int.Parse(frenqTextBox2.Text), int.Parse(priceTextBox1.Text),
-                    int.Parse(priceTextBox2.Text),isChBox2,isChBox1);
+                    int.Parse(priceTextBox2.Text));
                 foundedLabel.Opacity = 100;
 
                 if (calc.countFoundedCPUs == 1)

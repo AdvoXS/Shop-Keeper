@@ -35,7 +35,8 @@
         </StackPanel>
         <Label Content="Приоритетность" HorizontalAlignment="Left" Margin="210,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="164" FontFamily="Segoe UI Black" FontSize="18" Foreground="White"/>
         <Label Content="Расставьте критерии в порядке приоритетности" HorizontalAlignment="Left" Margin="172,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="244" FontFamily="Segoe UI Light" Foreground="White"/>
-        <Button Content="Показать" HorizontalAlignment="Left" Margin="210,330,0,0" VerticalAlignment="Top" Width="172" Height="38" FontSize="22" FontWeight="Bold" Foreground="White" Background="#FF3AB98F" BorderBrush="#FF3AB98F" Click="Button_Click"/>
+        <Button Content="Показать" HorizontalAlignment="Left" Margin="216,333,0,0" VerticalAlignment="Top" Width="172" Height="38" FontSize="22" FontWeight="Bold" Foreground="White" Background="#FF3AB98F" BorderBrush="#FF3AB98F" Click="Button_Click"/>
+        <Button x:Name="PreviousButton" Content="Назад" HorizontalAlignment="Left" Margin="17,347,0,0" VerticalAlignment="Top" Width="72" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click"/>
 
     </Grid>
 </Window>

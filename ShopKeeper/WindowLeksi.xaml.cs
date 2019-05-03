@@ -104,5 +104,12 @@ namespace ShopKeeper
                 Hide();
             }
         }
+
+        private void PreviousButton_Click(object sender, RoutedEventArgs e)
+        {
+            parentForm.IsEnabled = true;
+            parentForm.Show();
+            Close();
+        }
     }
 }

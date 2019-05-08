@@ -16,12 +16,17 @@ namespace ShopKeeper
         CPU objCPU;
         Button[] btnsKritetiy;
         bool isClickHelperButton;
+        bool isNotFirstStart;
         public MainWindow()
         {
             InitializeComponent();
+            isNotFirstStart = false;
             //Thread.Sleep(2);
-           
-
+        }
+        public MainWindow(bool a)
+        {
+            InitializeComponent();
+            isNotFirstStart = a;
         }
         private void init_Elements()
         {
@@ -58,8 +63,8 @@ namespace ShopKeeper
             bool isChBox1 = true, isChBox2;
            isChBox1= (bool)chBoxs[0].IsChecked ? true : false;
             isChBox2 = (bool)chBoxs[1].IsChecked ? true : false;
-            Show_Cpus(int.Parse(txtBoxsLow[0].Text), int.Parse(txtBoxsLow[1].Text), int.Parse(txtBoxsLow[2].Text),
-                int.Parse(txtBoxsLow[3].Text), int.Parse(txtBoxsLow[4].Text), int.Parse(txtBoxsLow[5].Text), isChBox1, isChBox2);
+           // Show_Cpus(int.Parse(txtBoxsLow[0].Text), int.Parse(txtBoxsLow[1].Text), int.Parse(txtBoxsLow[2].Text),
+               // int.Parse(txtBoxsLow[3].Text), int.Parse(txtBoxsLow[4].Text), int.Parse(txtBoxsLow[5].Text), isChBox1, isChBox2);
         }
         public void resetShow_Click(object sender, EventArgs e)
         {
@@ -310,11 +315,15 @@ namespace ShopKeeper
                 priceCPULabels[i].FontWeight = price_Label.FontWeight;
             }
         }
-        private void Show_Cpus(int minCores,int maxCores,int minFrenq,int maxFrenq,int minPrice,int maxPrice, bool intVideo, bool SO,string type="",string socket="")
+
+        public void Show_Cpus(int minCores,int maxCores,int minFrenq,int maxFrenq,int minPrice,int maxPrice,int a  = 13)
         {
+            deleteStartScreen();
+            WindowStyle = WindowStyle.SingleBorderWindow;
             scrViewerCPUs.IsEnabled = true;
             scrViewerCPUs.Visibility = Visibility.Visible;
             panel.IsEnabled = true;
+            panel.Height = a * 108;
             int ots = 108;
             int tek = 0;
             objCPU = new CPU();
@@ -342,19 +351,16 @@ namespace ShopKeeper
             // panel.Children.Add(ScrViewerCPUs);
             for (int i = 0; i < arrGroupBoxsCPUs.Length; i++)
             {
-                if ((objCPU.cpuList.ElementAt(i).Value.socket_CPU == socket || socket == "") 
-                    && (objCPU.cpuList.ElementAt(i).Value.type_CPU == type || type == "")
-                    && (objCPU.cpuList.ElementAt(i).Value.countCores_CPU>=minCores && objCPU.cpuList.ElementAt(i).Value.countCores_CPU <= maxCores)
+                if ((objCPU.cpuList.ElementAt(i).Value.countCores_CPU>=minCores && objCPU.cpuList.ElementAt(i).Value.countCores_CPU <= maxCores)
                     && (objCPU.cpuList.ElementAt(i).Value.frequency_CPU>=minFrenq && objCPU.cpuList.ElementAt(i).Value.frequency_CPU <= maxFrenq)
-                    && (objCPU.cpuList.ElementAt(i).Value.price_CPU>=minPrice && objCPU.cpuList.ElementAt(i).Value.price_CPU <= maxPrice
-                    && intVideo == objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU 
-                    && objCPU.cpuList.ElementAt(i).Value.includedCS_CPU == SO))
+                    && (objCPU.cpuList.ElementAt(i).Value.price_CPU>=minPrice && objCPU.cpuList.ElementAt(i).Value.price_CPU <= maxPrice)
+                    )
                 {
                     arrGroupBoxsCPUs[i] = new GroupBox();
                     arrGridCPUs[i] = new Grid();
                     //create GroupBoxes for CPU view
                     arrGroupBoxsCPUs[i].Content = arrGridCPUs[i];
-                    arrGroupBoxsCPUs[i].Margin = new Thickness(359, tek, 0, 0);
+                    arrGroupBoxsCPUs[i].Margin = new Thickness(2, tek, 0, 0);
                     arrGroupBoxsCPUs[i].HorizontalAlignment = HorizontalAlignment.Left;
                     arrGroupBoxsCPUs[i].Height = 103;
                     arrGroupBoxsCPUs[i].Width = 311;
@@ -504,10 +510,17 @@ namespace ShopKeeper
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Show_Cpus();
-            HelperWindow helperWindow = new HelperWindow(this);
-            helperWindow.Show();
-            Hide();
+            if (!isNotFirstStart)
+            {
+                Show_Cpus();
+                HelperWindow helperWindow = new HelperWindow(this);
+                helperWindow.Show();
+                Hide();
+            }
+            else
+            {
+
+            }
         }
     }
 }

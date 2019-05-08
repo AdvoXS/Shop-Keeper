@@ -38,7 +38,7 @@ namespace ShopKeeper
             parentForm.Show();
             Close();
         }
-
+        SubOptimCalcClass tmpcalc;
         private void PreviousButton_Copy_Click(object sender, RoutedEventArgs e)
         {
             ComboBoxItem cmb = mainKriteriiBox.SelectedValue as ComboBoxItem;
@@ -63,6 +63,7 @@ namespace ShopKeeper
                 foundedLabel.Background = Brushes.Green;
                 foundedLabel.Opacity = 100;
                 WindowShowProduct shower = new WindowShowProduct(calc.foundedIndexCpus[0], this);
+                fountLabel.Visibility = Visibility.Hidden;
                 shower.Show();
                 Hide();
             }
@@ -70,12 +71,15 @@ namespace ShopKeeper
             {
                 foundedLabel.Content = "Найдено несколько(" + calc.countFounded + ") \nсоответствующих критериям \nтоваров. \nCузьте границы!";
                 foundedLabel.Background = Brushes.Orange;
+                fountLabel.Visibility = Visibility.Visible;
+                tmpcalc = calc;
                 foundedLabel.Opacity = 100;
             }
             else if (calc.countFounded == 0)
             {
                 foundedLabel.Opacity = 100;
                 foundedLabel.Content = "Не найдено подходящих \nтоваров. \nРасширьте границы!";
+                fountLabel.Visibility = Visibility.Hidden;
                 foundedLabel.Background = Brushes.OrangeRed;
             }
         }
@@ -208,6 +212,15 @@ namespace ShopKeeper
                 priceTextBox1.Text = "0";
                 priceTextBox2.Text = "30000";
             }
+        }
+
+        private void FountLabel_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+             MainWindow main = new MainWindow(true);
+            main.Show();
+            main.Show_Cpus(Convert.ToInt32(coresTextBox1.Text), Convert.ToInt32(coresTextBox2.Text),
+                Convert.ToInt32(taktTextBox1.Text), Convert.ToInt32(taktTextBox1.Text),
+                 Convert.ToInt32(priceTextBox1.Text), Convert.ToInt32(priceTextBox2.Text), tmpcalc.countFounded);
         }
     }
 }

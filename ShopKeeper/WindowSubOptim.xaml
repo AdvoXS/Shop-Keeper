@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopKeeper"
         mc:Ignorable="d"
-        Title="Помощник" Height="505.245" Width="497.454" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Closed="Window_Closed">
+        Title="Помощник" Height="532.809" Width="497.454" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Closed="Window_Closed">
     <Grid>
         <TextBox x:Name="coresTextBox1" HorizontalAlignment="Left" Height="23" Margin="72,196,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="116" IsEnabled="False"/>
         <TextBox x:Name="coresTextBox2" HorizontalAlignment="Left" Height="23" Margin="225,196,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Width="116" SpellCheck.IsEnabled="True" IsEnabled="False"/>
-        <Button x:Name="PreviousButton" Content="Назад" HorizontalAlignment="Left" Margin="19,439,0,0" VerticalAlignment="Top" Width="69" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click" IsCancel="True"/>
+        <Button x:Name="PreviousButton" Content="Назад" HorizontalAlignment="Left" Margin="18,459,0,0" VerticalAlignment="Top" Width="69" Height="24" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="14" FontWeight="Bold" Foreground="#FFD2D2D2" Click="PreviousButton_Click" IsCancel="True"/>
         <Label x:Name="coresLabel" Content="Количество ядер" HorizontalAlignment="Left" Margin="72,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.546,-0.424" Width="125" FontSize="14" Foreground="White"/>
         <Label x:Name="coresOt" Content="От" HorizontalAlignment="Left" Margin="43,197,0,0" VerticalAlignment="Top" Width="25" Foreground="White"/>
         <Label x:Name="coresDo" Content="До" HorizontalAlignment="Left" Margin="196,197,0,0" VerticalAlignment="Top" Width="25" Foreground="White"/>
@@ -23,9 +23,9 @@
         <Label x:Name="priceOt" Content="От" HorizontalAlignment="Left" Margin="42,345,0,0" VerticalAlignment="Top" Width="25" Foreground="White"/>
         <Label x:Name="taktDo" Content="До" HorizontalAlignment="Left" Margin="196,276,0,0" VerticalAlignment="Top" Width="25" Foreground="White"/>
         <Label x:Name="priceDo" Content="До" HorizontalAlignment="Left" Margin="196,349,0,0" VerticalAlignment="Top" Width="25" Foreground="White"/>
-        <Button x:Name="PreviousButton_Copy" Content="Продолжить" HorizontalAlignment="Left" Margin="346,432,0,0" VerticalAlignment="Top" Width="113" Height="31" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="16" FontWeight="Bold" Foreground="#FFF5E9E9" Click="PreviousButton_Copy_Click" IsEnabled="False"/>
+        <Button x:Name="PreviousButton_Copy" Content="Продолжить" HorizontalAlignment="Left" Margin="352,452,0,0" VerticalAlignment="Top" Width="113" Height="31" Background="#FF5591F1" BorderBrush="#FF558EF5" FontSize="16" FontWeight="Bold" Foreground="#FFF5E9E9" Click="PreviousButton_Copy_Click" IsEnabled="False"/>
         <Label Content="Субоптимизация" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.158,-0.277" Width="191" FontFamily="Segoe UI Black" FontSize="20" Foreground="White"/>
-        <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="130,389,0,0" VerticalAlignment="Top" Width="191" Height="76" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12" MouseUp="FoundedLabel_MouseUp"/>
+        <Label x:Name="foundedLabel" Content="Найдено продуктов. Нажмите еше раз кнопку продолжить для отображения найденного товара." HorizontalAlignment="Left" Margin="133,412,0,0" VerticalAlignment="Top" Width="191" Height="76" Background="#FF36D93F" Foreground="White" Opacity="0" FontSize="12" MouseUp="FoundedLabel_MouseUp"/>
         <ComboBox x:Name="mainKriteriiBox" HorizontalAlignment="Left" Margin="72,92,0,0" VerticalAlignment="Top" Width="176" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Cursor="Hand" Content="Количество ядер"/>
             <ComboBoxItem Cursor="Hand" Content="Тактовая частота"/>
@@ -39,6 +39,11 @@
         <CheckBox x:Name="coresCheck" Content="" HorizontalAlignment="Left" Margin="51,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.678,-2.366" Width="137" Click="CoresCheck_Click" IsChecked="True"/>
         <CheckBox x:Name="coresCheck_Copy" Content="" HorizontalAlignment="Left" Margin="51,253,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.678,-2.366" Width="137" Click="CoresCheck_Copy_Click" IsChecked="True"/>
         <CheckBox x:Name="coresCheck_Copy1" Content="" HorizontalAlignment="Left" Margin="51,321,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.678,-2.366" Width="66" Click="CoresCheck_Copy1_Click" IsChecked="True"/>
+        <Label Content="В поля вводятся целые положительные числа." HorizontalAlignment="Left" Margin="43,385,0,0" VerticalAlignment="Top" Foreground="#FFD9D9D9"/>
+        <Label Content="(Max 32)" HorizontalAlignment="Left" Margin="352,192,0,0" VerticalAlignment="Top" Foreground="#FFFDC7C7"/>
+        <Label Content="(Max 4000)" HorizontalAlignment="Left" Margin="352,273,0,0" VerticalAlignment="Top" Foreground="#FFFDC7C7"/>
+        <Label Content="(Max 30000)" HorizontalAlignment="Left" Margin="352,345,0,0" VerticalAlignment="Top" Foreground="#FFFDC7C7"/>
+        <Label x:Name="fountLabel" Content="Показать найденные" HorizontalAlignment="Left" Margin="342,420,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.405,0.025" Foreground="#FFD9B3B3" FontStyle="Italic" MouseUp="FountLabel_MouseUp" Width="138" Cursor="Hand" Visibility="Hidden"/>
 
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopKeeper"
         mc:Ignorable="d"
-        Title="Shop Keeper" Height="354.864" Width="552.251" SizeChanged="MainWindow_SizeChanged" WindowStartupLocation="Manual" Background="White" Initialized="MainWindow_Initialized" Activated="MainWindow_Activated" Loaded="MainWindow_Loaded" WindowStyle="None">
+        Title="Shop Keeper" Height="354.864" Width="552.251" SizeChanged="MainWindow_SizeChanged" WindowStartupLocation="CenterScreen" Background="White" Initialized="MainWindow_Initialized" Activated="MainWindow_Activated" Loaded="MainWindow_Loaded" WindowStyle="None">
     <Grid>
         <Label x:Name="labelQuestion1" Content="Выберите что хотите приобрести" HorizontalAlignment="Left" Margin="49,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="1,1" Width="325" FontSize="20" Foreground="#FF490000" Visibility="Hidden"/>
         <Label x:Name="labelCPU" Content="Процессор" HorizontalAlignment="Left" Margin="173,151,0,0" VerticalAlignment="Top" Width="96" FontSize="16" FontFamily="Segoe UI Semibold" Foreground="#FF050000" RenderTransformOrigin="0.003,0.429" Visibility="Hidden"/>

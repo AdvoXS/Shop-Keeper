@@ -42,6 +42,7 @@ namespace ShopKeeper
             windowSelect.Show();
         }
         //bool searched;
+        lowBorderCalc tmpCalc;
         private void PreviousButton_Copy_Click(object sender, RoutedEventArgs e)
         {
             if(coresTextBox1.Text!="" && coresTextBox2.Text!=""&& frenqTextBox1.Text!="" 
@@ -56,6 +57,7 @@ namespace ShopKeeper
                 {
                     foundedLabel.Content = "Найден подходящий товар, \nчтобы увидеть его - \nнажмите кнопку продолжить, \nповторно!";
                     foundedLabel.Background = Brushes.Green;
+                    fountLabel.Visibility = Visibility.Hidden;
                     WindowShowProduct shower = new WindowShowProduct(calc.indexFoundedCPUs[0],this);
                     shower.Show();
                     Hide();
@@ -63,11 +65,14 @@ namespace ShopKeeper
                 else if (calc.countFoundedCPUs <= 0)
                 {
                     foundedLabel.Content = "Не найдено подходящих \nтоваров. \nРасширьте границы!";
+                    fountLabel.Visibility = Visibility.Hidden;
                     foundedLabel.Background = Brushes.OrangeRed;
                 }
                 else
                 {
                     foundedLabel.Content = "Найдено несколько("+calc.countFoundedCPUs+") \nсоответствующих критериям \nтоваров. \nCузьте границы!";
+                    fountLabel.Visibility = Visibility.Visible;
+                    tmpCalc = calc;
                     foundedLabel.Background = Brushes.Orange;
                 }
             }
@@ -124,6 +129,16 @@ namespace ShopKeeper
                 priceTextBox1.Text = "0";
                 priceTextBox2.Text = "30000";
             }
+        }
+        MainWindow main;
+        private void FountLabel_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+           main =new MainWindow(true);
+                main.Show();
+                main.Show_Cpus(Convert.ToInt32(coresTextBox1.Text), Convert.ToInt32(coresTextBox2.Text),
+                    Convert.ToInt32(frenqTextBox1.Text), Convert.ToInt32(frenqTextBox2.Text),
+                     Convert.ToInt32(priceTextBox1.Text), Convert.ToInt32(priceTextBox2.Text),tmpCalc.countFoundedCPUs);
+            
         }
     }
 }

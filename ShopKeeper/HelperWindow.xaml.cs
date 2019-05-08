@@ -420,13 +420,13 @@ namespace ShopKeeper
                     win.Show();
                 }
                 isShowAll = true;
-                showerCpusLabel.Content = "Скрыть все продукты";
+                showerCpusLabel.Content = "Скрыть все процессоры";
             }
             else
             {
                 parentForm.Hide();
                 isShowAll = false;
-                showerCpusLabel.Content = "Показать все продукты";
+                showerCpusLabel.Content = "Показать все процессоры";
             }
         }
 

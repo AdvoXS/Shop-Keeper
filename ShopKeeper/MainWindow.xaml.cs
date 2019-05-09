@@ -275,8 +275,23 @@ namespace ShopKeeper
                 socketCPULabels[i].Content = "Сокет: "+ objCPU.cpuList.ElementAt(i).Value.socket_CPU;
                 coreCPULabels[i].Content = "Ядер: " + objCPU.cpuList.ElementAt(i).Value.countCores_CPU;
                 frenqCPULabels[i].Content = "Тактовая частота: " + objCPU.cpuList.ElementAt(i).Value.frequency_CPU+" MHz";
-                integrCPULabels[i].Content = "Интегрированное видео: " + objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU;
-                SOCPULabels[i].Content = "Система охлаждения: " + objCPU.cpuList.ElementAt(i).Value.includedCS_CPU;
+                if (objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU == false)
+                {
+                    integrCPULabels[i].Content = "Интегрированное видео: " + "Есть";
+                }
+                else if(objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU == true)
+                {
+                    integrCPULabels[i].Content = "Интегрированное видео: " + "Нет";
+                }
+                if(objCPU.cpuList.ElementAt(i).Value.includedCS_CPU == false)
+                {
+                    SOCPULabels[i].Content = "Система охлаждения: " + "Есть";
+                }
+                else if (objCPU.cpuList.ElementAt(i).Value.includedCS_CPU == true)
+                {
+                    SOCPULabels[i].Content = "Система охлаждения: " + "Нет";
+                }
+               
                 priceCPULabels[i].Content = objCPU.cpuList.ElementAt(i).Value.price_CPU+ " ₽";
 
                 //set view of Labels of CPU
@@ -387,8 +402,22 @@ namespace ShopKeeper
                     socketCPULabels[i].Content = "Сокет: " + objCPU.cpuList.ElementAt(i).Value.socket_CPU;
                     coreCPULabels[i].Content = "Ядер: " + objCPU.cpuList.ElementAt(i).Value.countCores_CPU;
                     frenqCPULabels[i].Content = "Тактовая частота: " + objCPU.cpuList.ElementAt(i).Value.frequency_CPU + " MHz";
-                    integrCPULabels[i].Content = "Интегрированное видео: " + objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU;
-                    SOCPULabels[i].Content = "Система охлаждения: " + objCPU.cpuList.ElementAt(i).Value.includedCS_CPU;
+                    if (objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU == false)
+                    {
+                        integrCPULabels[i].Content = "Интегрированное видео: " + "Есть";
+                    }
+                    else if (objCPU.cpuList.ElementAt(i).Value.integratedVideo_CPU == true)
+                    {
+                        integrCPULabels[i].Content = "Интегрированное видео: " + "Нет";
+                    }
+                    if (objCPU.cpuList.ElementAt(i).Value.includedCS_CPU == false)
+                    {
+                        SOCPULabels[i].Content = "Система охлаждения: " + "Есть";
+                    }
+                    else if (objCPU.cpuList.ElementAt(i).Value.includedCS_CPU == true)
+                    {
+                        SOCPULabels[i].Content = "Система охлаждения: " + "Нет";
+                    }
                     priceCPULabels[i].Content = objCPU.cpuList.ElementAt(i).Value.price_CPU + " ₽";
 
                     //set view of Labels of CPU

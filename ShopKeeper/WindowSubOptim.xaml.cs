@@ -213,13 +213,13 @@ namespace ShopKeeper
                 priceTextBox2.Text = "30000";
             }
         }
-
+        MainWindow main;
         private void FountLabel_MouseUp(object sender, MouseButtonEventArgs e)
         {
-             MainWindow main = new MainWindow(true);
+            main  = new MainWindow(true);
             main.Show();
             main.Show_Cpus(Convert.ToInt32(coresTextBox1.Text), Convert.ToInt32(coresTextBox2.Text),
-                Convert.ToInt32(taktTextBox1.Text), Convert.ToInt32(taktTextBox1.Text),
+                Convert.ToInt32(taktTextBox1.Text), Convert.ToInt32(taktTextBox2.Text),
                  Convert.ToInt32(priceTextBox1.Text), Convert.ToInt32(priceTextBox2.Text), tmpcalc.countFounded);
         }
     }
